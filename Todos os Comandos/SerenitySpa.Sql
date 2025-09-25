@@ -1,0 +1,127 @@
+-- script sql (serenityspa) Casa de Spa e Massagem 
+
+-- Eduarda da Rocha Pinheiro 3PI
+-- Heloísa Marques Pereira
+-- Mariana Yukimi Ishigaki
+
+-- ssh mtecpi3@192.678.8.7
+-- mtecpi3
+-- mysql -uroot -p
+-- mtecpi3
+
+create database serenityspa;
+use serenityspa;
+
+-- Outros para não esquecer
+show databases;
+describe table (nome da tabela)
+select * from (nome da tabela)
+drop table (nome da tabela)
+
+create table empresa (
+    codigo_empresa int auto_increment primary key,
+    razao_social varchar(200),
+    nome_fantasia varchar(200),
+    cnpj varchar(20),
+    localizacao varchar(200),
+    telefone varchar(20),
+    email varchar(100),
+    site varchar(100)
+);
+
+insert into empresa (razao_social,nome_fantasia,cnpj, localizacao,telefone,email,site)values('serenity spa e massagens ltda','serenity spa',93911881000183,'rua pedro bibiano, jardim barcelona, presidente prudente -sp',11986288806,'contato@serenityspa.com','serenityspa.com.br');
+
+create table servicos (
+    codigo int auto_increment primary key,
+    nome varchar(100) not null unique,
+    descricao text,
+    duracao_min int,
+    duracao_max int,
+    preco_min decimal(10,2),
+    preco_max decimal(10,2)
+);
+
+insert into servicos(nome, descricao, duracao_min, duracao_max, preco_min, preco_max) values ('aromaterapia','massagem com oleos essenciais para relaxamento e equilibrio',30,60,180.00,260.00),('pedras quentes','massagem com pedras vulcanicas aquecidas para relaxamento muscular',60,60,255.00,255.00),('shiatsu','tecnica oriental com pressao dos dedos em pontos especificos',45,45,260.00,260.00),('com ventosa','massagem que utiliza ventosas para ativar a circulacao',30,30,125.00,125.00),('sueca','massagem classica com manobras relaxantes e terapeuticas',45,45,210.00,210.00),('desportiva','massagem voltada para alivio de tensoes musculares em atletas',50,80,127.50,280.00),('esfoliacao completa','remocao de celulas mortas com cremes esfoliantes',60,60,120.00,250.00),('envoltorio de argilas, chocolates ou algas','tratamento nutritivo com aplicação corporal de elementos naturais',90,90,690.00,690.00),('limpeza de pele completa','limpeza profunda com extracao de impurezas e hidratacao facial',60,60,133.00,133.00),('hidratacao profunda e mascaras faciais nutritivas','tratamento facial com aplicacao de mascaras e hidratacao intensa',60,60,140.00,140.00),('massagem facial','massagem relaxante e estimulante para a face',30,30,130.00,130.00),('sauna seca ou a vapor','acesso a sauna seca ou umida para relaxamento',30,30,50.00,80.00),('banho com sais de banho','imersao relaxante com sais especiais',30,30,100.00,150.00);
+
+create table pacotes (
+    codigo int auto_increment primary key,
+    nome varchar(100) not null,
+    descricao text,
+    preco decimal(10,2),
+    duracao int,
+    valor_por_pessoa_extra decimal(10,2) default 0.00
+);
+
+insert into pacotes (nome, descricao, preco, duracao, valor_por_pessoa_extra) values('spa day dois ou mais','escalda pes aromatico, hidratacao profunda, massagem facial, massagem relaxante corporal, shiatsu',813.00,180,150.00),('spa day individual','ritual de recepcao, esfoliacao corporal com lama quente e oleos essenciais, escalda pes aromatico, massagem corporal com pedras quentes, hidratacao profunda, massagem facial relaxante',713.00,240,0.00);
+
+
+create table itens_pacote (
+    codigo_pacote int not null,
+    nome_servico varchar(100) not null,
+    ordem_execucao int,
+    quantidade int,
+    primary key (codigo_pacote, nome_servico),
+    foreign key (codigo_pacote) references pacotes(codigo),
+    foreign key (nome_servico) references servicos(nome)
+);
+
+insert into itens_pacote (codigo_pacote, nome_servico, ordem_execucao, quantidade) values (1,'banho com sais de banho',1,1),(1,'hidratacao profunda e mascaras faciais nutritivas',2,1),(1,'massagem facial',3,1),(1,'sueca',4,1),(1,'shiatsu',5,1),(2,'esfoliacao completa',1,1),(2,'banho com sais de banho',2,1),(2,'pedras quentes',3,1),(2,'hidratacao profunda e mascaras faciais nutritivas',4,1),(2,'massagem facial',5,1);
+
+create table produtos_estoque (
+    codigo int auto_increment primary key,
+    nome varchar(100),
+    categoria varchar(50),
+    quantidade int,
+    preco_unitario decimal(10,2),
+    preco_total decimal(10,2),
+    fornecedor varchar(100)
+);
+
+insert into produtos_estoque(nome,categoria,quantidade,preco_unitario,preco_total,fornecedor) values('maca dobravel','equipamento',1,1310.00,1310.00,'andrey'),('kit bolsa termica com pedras quentes','equipamento',1,163.33,163.33,'mercado livre'),('kit 12 ventosas','acessorio',1,47.99,47.99,'mercado livre'),('alcool 70 500ml','limpeza',2,9.28,18.56,'magazine luiza'),('agua sanitaria 1l','limpeza',2,5.20,10.40,'amazon'),('mascara descartavel cem unidades','protecao',1,38.51,38.51,'magazine luiza'),('aquecedor de pedras quentes','equipamento',1,385.90,385.90,'amazon'),('vela aromatica maracuja com baunilha','aromatizante',5,21.90,109.50,'yalume'),('sais de banho esfoliante romance','cosmetico',2,89.00,178.00,'feito brasil'),('cerave locao hidratante corporal','cosmetico',2,88.60,177.20,'amazon'),('locao hidratante nativa spa ameixa negra','cosmetico',1,63.00,63.00,'amazon'),('toalha banho hotel 100% algodao','toalhas',2,157.90,315.80,'amazon'),('roupao cortex microfibra','vestuario',8,56.31,450.48,'amazon'),('oleo de massagem vegetal','massagem',2,59.90,119.80,'kalya tantra'),('argilas corporais e faciais','cosmetico',3,33.00,99.00,'mercado livre'),('kit mascaras nutritivas','cosmetico',1,188.73,188.73,'mercado livre'),('creme facial creamy calming','cosmetico',2,46.90,93.80,'amazon'),('kit skincare anti-aging prevencao','cosmetico',1,387.75,387.75,'creamy skincare'),('kit skincare anti acne e anti oleosidade','cosmetico',1,245.25,245.25,'creamy skincare'),('kit skincare pele sensivel','cosmetico',1,304.50,304.50,'creamy skincare'),('dominio serenityspa.com.br (anual)','outros',1,40.00,40.00,'registro de dominio'),('plano erp gendo (mensal)','outros',1,99.54,99.54,'gendo erp'
+);
+
+create table financeiro (
+    codigo int auto_increment primary key, 
+    tipo enum ('receita', 'despesa'),
+    descricao text,
+    valor decimal (10,2),
+    data date
+);
+
+insert into financeiro(tipo,descricao,valor,data) values('despesa','aluguel do espaco comercial',1200.00,'2025-05-01'),('despesa','conta de energia eletrica',1400.00,'2025-05-01'),('despesa','conta de agua',220.00,'2025-05-01'),('despesa','maca dobravel',1310.00,'2025-05-02'),('despesa','kit bolsa termica com pedras quentes',163.33,'2025-05-02'),('despesa','kit 12 ventosas',47.99,'2025-05-02'),('despesa','alcool 70% 500ml',18.56,'2025-05-02'),('despesa','agua sanitaria 1l',10.40,'2025-05-02'),('despesa','mascara descartavel 100 unidades',38.51,'2025-05-02'),('despesa','aquecedor de pedras quentes',385.90,'2025-05-03'),('despesa','vela aromatica maracuja com baunilha',109.50,'2025-05-03'),('despesa','sais de banho esfoliante romance',178.00,'2025-05-03'),('despesa','cerave locao hidratante corporal',177.20,'2025-05-03'),('despesa','locao hidratante nativa spa ameixa negra',63.00,'2025-05-03'),('despesa','kit 10 toalhas banho hotel 100% algodao',315.80,'2025-05-04'),('despesa','roupao cortex microfibra',450.48,'2025-05-04'),('despesa','oleo de massagem vegetal kalya tantra',119.80,'2025-05-05'),('despesa','argila corporal e facial',99.00,'2025-05-05'),('despesa','kit mascaras nutritivas',188.73,'2025-05-05'),('despesa','creme facial creamy calming',93.80,'2025-05-04'),('despesa','kit skincare anti-aging prevencao',387.75,'2025-05-04'),('despesa','kit skincare anti acne e anti oleosidade',245.25,'2025-05-04'),('despesa','kit skincare pele sensivel',304.50,'2025-05-04'),('despesa','plano erp gendo mensal',99.54,'2025-05-05'),('despesa','dominio serenityspa.com.br anual',40.00,'2025-05-05');
+
+create table funcionarios (
+    codigo int auto_increment primary key,
+    nome varchar(100),
+    cargo varchar(50),
+    telefone varchar (15),
+    email varchar(100)
+);
+
+insert into funcionarios(nome,cargo,telefone,email) values('eduarda da rocha','massagista',1193247875,'eduarda.rocha@gmail.com'),('heloisa marques pereira','gerente',11957888841,'marques.heloisa@gmail.com'),('mariana yukimi ishigaki','socio e recepcionista',11923479675,'mariana.yukimi@gmail.com');
+
+create table clientes (
+    codigo int auto_increment primary key,
+    nome varchar(200),
+    telefone varchar(20),
+    email varchar(200),
+    nascimento date,
+    sexo varchar(20)
+);
+
+insert into clientes (nome, telefone, email, nascimento, sexo) values
+('mirela silva aparecida',11962268712,'nascil.rela@gmail.com','1998-08-03','feminino'
+);
+
+create table agendamentos (
+    codigo_agendamento int auto_increment primary key,
+    codigo_cliente int,
+    codigo_funcionario int,
+    codigo_servico int,
+    data date,
+    duracao time,
+    status enum('agendado','concluído','cancelado'),
+    foreign key (codigo_cliente) references clientes(codigo),
+    foreign key (codigo_funcionario) references funcionarios(codigo),
+    foreign key (codigo_servico) references servicos(codigo)
+);
