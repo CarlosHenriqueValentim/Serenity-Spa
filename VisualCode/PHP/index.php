@@ -10,9 +10,9 @@ if(isset($_SESSION['nome'])) {
 if(isset($_GET['erro'])) {
     echo "<p class='mensagem'>";
     switch($_GET['erro']){
-        case 1: echo "⚠️ Usuário ou senha inválidos."; break;
-        case 2: echo "⚠️ Senhas não conferem."; break;
-        case 3: echo "⚠️ Preencha todos os campos."; break;
+        case 1: echo "Usuário ou senha inválidos."; break;
+        case 2: echo "Senhas não conferem."; break;
+        case 3: echo "Preencha todos os campos."; break;
     }
     echo "</p>";
 }
