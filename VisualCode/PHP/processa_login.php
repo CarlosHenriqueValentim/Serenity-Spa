@@ -52,7 +52,7 @@ if (!$usuario_encontrado) {
    
     $arquivo_csv = fopen($arquivo, 'a');
     if ($arquivo_csv === false) {
-        die("❌ Erro ao abrir o arquivo de usuários.");
+        die("Erro ao abrir o arquivo de usuários.");
     }
 
     fputcsv($arquivo_csv, $linha); 
