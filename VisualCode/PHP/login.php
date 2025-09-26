@@ -36,7 +36,7 @@ $_SESSION['obs']      = $obs;
 
 <?php include __DIR__ . "/header.php"; ?>
 
-<h2>✅ Agendamento Confirmado!</h2>
+<h2>Agendamento Confirmado!</h2>
 <p><strong>Nome:</strong> <?= htmlspecialchars($nome) ?></p>
 <p><strong>WhatsApp:</strong> <?= htmlspecialchars($whatsapp) ?></p>
 <p><strong>Serviço:</strong> <?= htmlspecialchars($servico) ?></p>
