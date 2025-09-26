@@ -4,7 +4,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("FSÇ.jpg") no-repeat center center fixed;
+  background: url("../IMAGENS/FSS.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #5a3d46;
 }
@@ -36,6 +36,7 @@ header {
   border: 2px solid #ffe4ea;
 }
 
+
 nav a {
   color: #fff;
   margin: 0 12px;
@@ -49,7 +50,7 @@ nav a:hover, nav a.active { color: #ffc8d6; }
 
 .hero {
   text-align: center;
-  padding: 70px 20px;
+  padding: 80px 20px;
   background: #ffeef3;
   border-radius: 18px;
   margin: 20px;
@@ -57,7 +58,19 @@ nav a:hover, nav a.active { color: #ffc8d6; }
 }
 
 .hero h1 { font-size: 2.8em; margin-bottom: 15px; }
-.hero p { font-size: 1.2em; }
+.hero p { font-size: 1.2em; margin-bottom: 25px; }
+
+.btn {
+  display: inline-block;
+  background: #e07a9a;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover { background: #c95a7e; }
 
 
 .cards {
@@ -69,12 +82,11 @@ nav a:hover, nav a.active { color: #ffc8d6; }
 
 .card {
   background: #fff;
-  padding: 20px;
+  padding: 25px;
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08);
   transition: transform 0.3s;
 }
-
 .card:hover { transform: translateY(-5px); }
 
 .card h2 { color: #9b3f5f; margin-bottom: 10px; }

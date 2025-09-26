@@ -4,7 +4,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("FSS.jpg") no-repeat center center fixed;
+  background: url("../IMAGENS/FSS.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #5a3d46;
 }
@@ -61,9 +61,10 @@ nav a:hover, nav a.active { color:#ffc8d6; }
 
 .info {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:40px 20px;
+  grid-template-columns:1fr;
+  max-width:500px;
+  margin:40px auto;
+  padding:0 20px;
 }
 
 .info-card {
@@ -71,12 +72,43 @@ nav a:hover, nav a.active { color:#ffc8d6; }
   padding:25px;
   border-radius:18px;
   box-shadow:0 10px 25px rgba(154,64,95,0.08);
-  transition: transform 0.3s;
 }
 
-.info-card:hover { transform: translateY(-5px); }
+label {
+  display:block;
+  margin:15px 0 5px;
+  font-weight:500;
+}
 
-.info-card h2 { color:#9b3f5f; margin-bottom:10px; }
+input, select, textarea {
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #f8b4c4;
+  margin-bottom:10px;
+}
+
+button.btn {
+  width:100%;
+  padding:15px;
+  background:#e07a9a;
+  color:#fff;
+  font-weight:bold;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:10px;
+}
+
+button.btn:hover { background:#c95a7e; }
+
+.msg {
+  text-align:center;
+  color:#9b3f5f;
+  font-weight:bold;
+  margin-top:10px;
+}
 
 
 footer {

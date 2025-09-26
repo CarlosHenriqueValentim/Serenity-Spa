@@ -4,17 +4,18 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("FSS.jpg") no-repeat center center fixed;
+  background: url("../IMAGENS/FSS.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #5a3d46;
 }
+
 header {
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 20px;
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
-  box-shadow: 0 4px 10px rgba(154,64,95,0.1);
+  box-shadow: 0 8px 20px rgba(154,64,95,0.1);
   border-radius:0 0 18px 18px;
 }
 
@@ -76,6 +77,7 @@ nav a:hover, nav a.active { color:#ffc8d6; }
 .info-card:hover { transform: translateY(-5px); }
 
 .info-card h2 { color:#9b3f5f; margin-bottom:10px; }
+
 
 footer {
   text-align:center;
