@@ -4,7 +4,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("../IMAGENS/FSS.jpg") no-repeat center center fixed;
+  background: url("../IMAGENS/FFF.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #5a3d46;
 }
@@ -49,12 +49,9 @@ nav a:hover, nav a.active { color:#ffc8d6; }
 .hero {
   text-align:center;
   padding:80px 20px;
-  background:#ffeef3;
   border-radius:18px;
   margin:20px;
-  box-shadow:0 10px 25px rgba(154,64,95,0.08);
 }
-
 .hero h1 { font-size:2.8em; margin-bottom:15px; }
 .hero p { font-size:1.2em; }
 
@@ -68,10 +65,8 @@ nav a:hover, nav a.active { color:#ffc8d6; }
 }
 
 .info-card {
-  background:#fff;
   padding:25px;
   border-radius:18px;
-  box-shadow:0 10px 25px rgba(154,64,95,0.08);
 }
 
 label {

@@ -4,7 +4,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("../IMAGENS/FSÇ.jpg") no-repeat center center fixed;
+  background: url("../IMAGENS/Mídia.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #5a3d46;
 }
@@ -49,15 +49,14 @@ nav a:hover, nav a.active { color: #ffc8d6; }
 
 .hero {
   text-align: center;
-  padding: 70px 20px;
-  background: #ffeef3;
+  padding: 60px 160px;
   border-radius: 18px;
   margin: 20px;
-  box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08);
+  margin-bottom: 20px;
 }
 
-.hero h1 { font-size: 2.8em; margin-bottom: 15px; }
-.hero p { font-size: 1.2em; }
+.hero h1 { font-size: 2.8em; margin-bottom: 15px;  background-color: #ffc8d6; border-radius: 50px; margin-left: 300px; margin-right: 300px;   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08); }
+.hero p { font-size: 1.2em; margin-bottom: 15px; background-color: #ffc8d6; border-radius: 20px;   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08); }
 
 
 .cards {
@@ -68,7 +67,7 @@ nav a:hover, nav a.active { color: #ffc8d6; }
 }
 
 .card {
-  background: #fff;
+  background-color: #ffc8d6;
   padding: 20px;
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08);
