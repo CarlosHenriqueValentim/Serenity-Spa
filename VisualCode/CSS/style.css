@@ -7,11 +7,23 @@
 
 
 body {
-    background:("../IMAGENS/FRosa.jpg");
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.6;
-    background: #fff5f7;
-    color: #5a3d46;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #fddde6; 
+  color: #5a3d46;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../IMAGENS/FRosa.jpg") no-repeat center bottom;
+  background-size: cover;
+  opacity: 0.4; 
+  z-index: -1; 
 }
 
 

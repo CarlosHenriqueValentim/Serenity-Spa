@@ -1,14 +1,26 @@
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("../IMAGENS/imagem\ 2.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-color: #fddde6; 
   color: #5a3d46;
+  position: relative;
+  overflow-x: hidden;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../IMAGENS/imagem 2.jpg") no-repeat center bottom;
+  background-size: cover;
+  z-index: -1; 
+}
 
 header {
   display: flex;
@@ -44,41 +56,62 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover, nav a.active { color: #ffc8d6; }
-
-
-.hero {
-  text-align: center;
-  padding: 60px 160px;
-  border-radius: 18px;
-  margin: 20px;
-  margin-bottom: 20px;
+nav a:hover, nav a.active {
+  color: #ffc8d6;
 }
 
-.hero h1 { font-size: 2.8em; margin-bottom: 15px;  background-color: #ffc8d6; border-radius: 50px; margin-left: 300px; margin-right: 300px;   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08); }
-.hero p { font-size: 1.2em; margin-bottom: 15px; background-color: #ffc8d6; border-radius: 20px;   box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08); }
+/* Bloco principal */
+.blocos {
+  text-align: center;
+  padding: 60px 80px;
+  margin: 20px;
+}
 
+.blocos h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
 
-.cards {
+.blocos p {
+  font-size: 1.2em;
+  color: #ffe4ea;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+/* Cards de serviços */
+.titulos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 40px 20px;
 }
 
-.card {
-  background-color: #ffc8d6;
-  padding: 20px;
+.subtitulos {
+  padding: 25px;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
-.card:hover { transform: translateY(-5px); }
+.subtitulos:hover {
+  transform: translateY(-5px);
+}
 
-.card h2 { color: #9b3f5f; margin-bottom: 10px; }
+.subtitulos h2 {
+  color: #ffc8d6;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
 
+.subtitulos p {
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;

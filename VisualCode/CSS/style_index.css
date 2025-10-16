@@ -1,14 +1,27 @@
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background: url("../IMAGENS/FRosa.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-color: #fddde6;
   color: #5a3d46;
+  position: relative;
+  overflow-x: hidden;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../IMAGENS/FRosa.jpg") no-repeat center bottom;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
 
 header {
   display: flex;
@@ -36,7 +49,6 @@ header {
   border: 2px solid #ffe4ea;
 }
 
-
 nav a {
   color: #fff;
   margin: 0 12px;
@@ -45,54 +57,51 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover, nav a.active { color: #ffc8d6; }
-
-
-.hero {
-  text-align:center;
-  padding:80px 20px;
-  border-radius:18px;
-  margin:20px;
+nav a:hover,
+nav a.active {
+  color: #ffc8d6;
 }
 
-.hero h1 { font-size: 2.8em; margin-bottom: 15px; }
-.hero p { font-size: 1.2em; margin-bottom: 25px; }
-
-.btn {
-  display: inline-block;
-  background: #e07a9a;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
+.blocos {
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 18px;
+  margin: 20px;
 }
-.btn:hover { background: #c95a7e; }
 
+.blocos h1 {
+  font-size: 2.8em;
+}
 
-.cards {
+.blocos p {
+  font-size: 1.2em;
+}
+
+.titulos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 40px 20px;
 }
 
-.card {
+.subtitulos {
   padding: 25px;
   border-radius: 18px;
   transition: transform 0.3s;
 }
-.card:hover { transform: translateY(-5px); }
 
-.card h2 { color: #9b3f5f; margin-bottom: 10px; }
+.subtitulos:hover {
+  transform: translateY(-5px);
+}
 
+.subtitulos h2 {
+  color: #9b3f5f;
+}
 
 footer {
   text-align: center;
   padding: 20px;
   background: #f8b4c4;
-  color: #fff;
+  color: #ffffff;
   margin-top: 30px;
   border-radius: 18px 18px 0 0;
 }
