@@ -232,9 +232,3 @@ desc financeiro;
 desc funcionarios;
 desc clientes;
 desc agendamentos;
-
-
-    
-    
-    
-    
