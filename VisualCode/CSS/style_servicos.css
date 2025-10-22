@@ -1,3 +1,14 @@
+@font-face {
+    font-family: power;
+    src: url(../FONTES/company/COMPANY.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -11,7 +22,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("../IMAGENS/imagem 2.jpg") no-repeat center bottom;
+  background: url("../IMAGENS/imagem 1.jpg") no-repeat center bottom;
   background-size: cover;
   z-index: -1; 
 }
