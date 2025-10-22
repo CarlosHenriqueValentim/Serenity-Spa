@@ -12,11 +12,12 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background-color: #fddde6;
+  background-color: #fddde6; 
   color: #5a3d46;
   position: relative;
   overflow-x: hidden;
 }
+
 
 body::after {
   content: "";
@@ -24,123 +25,145 @@ body::after {
   inset: 0;
   background: url("../IMAGENS/FRosa.jpg") no-repeat center bottom;
   background-size: cover;
-  opacity: 0.4;
-  z-index: -1;
+  opacity: 0.4; 
+  z-index: -1; 
 }
 
+
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: linear-gradient(90deg, #f8b4c4, #e07a9a);
-  box-shadow: 0 8px 20px rgba(154, 64, 95, 0.1);
-  border-radius: 0 0 18px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+    box-shadow: 0 4px 10px rgba(154, 64, 95, 0.1);
+    border-radius: 0 0 18px 18px;
+    flex-wrap: wrap;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  color: #fff;
-  font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.6em;
 }
 
 .logo-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 2px solid #ffe4ea;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ffe4ea;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav a {
-  color: #fff;
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+    color: #fff;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover,
 nav a.active {
-  color: #ffc8d6;
+    color: #ffc8d6;
 }
 
-.blocos {
-  text-align: center;
-  padding: 1px 1px;
-  border-radius: 18px;
-  margin: 20px;
+
+h2 {
+    text-align: center;
+    color: #9b3f5f;
+    margin: 30px 0 20px 0;
 }
 
-.blocos h1 {
-  font-size: 2.8em;
-  margin-bottom: 15px;
+
+.form-container {
+    max-width: 500px;
+    margin: 30px auto 50px auto;
+    padding: 25px 20px;
+    background: #ffeef3;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(154, 64, 95, 0.08);
 }
 
-.blocos p {
-  font-size: 1.2em;
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
-.titulos {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 1px 1px;
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #e0b2c1;
+    outline: none;
+    font-size: 1em;
+    transition: 0.3s;
 }
 
-.subtitulos {
-  padding: 25px;
-  border-radius: 18px;
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border-color: #9b3f5f;
+    box-shadow: 0 0 5px rgba(155, 63, 95, 0.3);
 }
 
-label {
-  display: block;
-  margin: 15px 0 5px;
-  font-weight: 500;
+.form-container button {
+    width: 100%;
+    background-color: #9b3f5f;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #f8b4c4;
-  margin-bottom: 10px;
+.form-container button:hover {
+    background-color: #7f334b;
 }
 
-button.btn {
-  width: 100%;
-  padding: 15px;
-  background: #e07a9a;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 10px;
+.mensagem {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9b3f5f;
 }
 
-button.btn:hover {
-  background: #c95a7e;
-}
-
-.msg {
-  text-align: center;
-  color: #9b3f5f;
-  font-weight: bold;
-  margin-top: 10px;
-}
 
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #f8b4c4;
-  color: #fff;
-  margin-top: 30px;
-  border-radius: 18px 18px 0 0;
+    text-align: center;
+    padding: 20px;
+    background: #f8b4c4;
+    color: #fff;
+    margin-top: 30px;
+    border-radius: 18px 18px 0 0;
+}
+
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .form-container {
+        padding: 20px 15px;
+        margin: 20px auto 40px auto;
+    }
 }
