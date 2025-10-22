@@ -1,3 +1,14 @@
+@font-face {
+    font-family: power;
+    src: url(../FONTES/company/COMPANY.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
