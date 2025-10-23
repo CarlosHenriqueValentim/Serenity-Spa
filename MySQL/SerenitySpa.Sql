@@ -19,58 +19,52 @@ select * from (nome da tabela)
 drop table (nome da tabela)
 
 create table if not exists empresa (
-    codigo_empresa int auto_increment not null primary key,
-    razao_social varchar(200) not null,
-    nome_fantasia varchar(200) not null,
-    cnpj_empresa varchar(20) not null,
-    localizacao_empresa varchar(200) not null,
-    telefone_empresa varchar(20) not null,
-    email_empresa varchar(100) not null,
-    site_empresa varchar(100) not null
+codigo_empresa int auto_increment not null primary key,
+razao_social varchar(200) not null,
+nome_fantasia varchar(200) not null,
+cnpj_empresa varchar(20) not null,
+localizacao_empresa varchar(200) not null,
+telefone_empresa varchar(20) not null,
+email_empresa varchar(100) not null,
+site_empresa varchar(100) not null
 );
 
 insert into empresa 
 (razao_social, nome_fantasia, cnpj, localizacao, telefone, email, site) values 
-    ('serenity spa e massagens ltda', 
-     'serenity spa', 
-     '93911881000183', 
-     'rua pedro bibiano, jardim barcelona, presidente prudente -sp', 
-     '11986288806', 
-     'contato@serenityspa.com', 
-     'serenityspa.com.br');
+('serenity spa e massagens ltda', 'serenity spa', '93911881000183', 'rua pedro bibiano, jardim barcelona, presidente prudente -sp', '11986288806', 'contato@serenityspa.com', 'serenityspa.com.br');
 
 create table if not exists servicos (
-    codigo_servico int auto_increment not null primary key,
-    nome_servico varchar(100) not null unique,
-    descricao_servico text not null,
-    duracao_min_servico int not null,
-    duracao_max_servico int not null,
-    preco_min_servico decimal(10,2) not null,
-    preco_max_servico decimal(10,2) not null
+codigo_servico int auto_increment not null primary key,
+nome_servico varchar(100) not null unique,
+descricao_servico text not null,
+duracao_min_servico int not null,
+duracao_max_servico int not null,
+preco_min_servico decimal(10,2) not null,
+preco_max_servico decimal(10,2) not null
 );
 
 insert into servicos (nome, descricao, duracao_min, duracao_max, preco_min, preco_max) values
-    ('aromaterapia','massagem com oleos essenciais para relaxamento e equilibrio',30, 60, 180.00, 260.00),
-    ('pedras quentes', 'massagem com pedras vulcanicas aquecidas para relaxamento muscular', 60, 60, 255.00, 255.00),
-    ('shiatsu', 'tecnica oriental com pressao dos dedos em pontos especificos', 45, 45, 260.00, 260.00),
-    ('com ventosa', 'massagem que utiliza ventosas para ativar a circulacao', 30, 30, 125.00, 125.00),
-    ('sueca', 'massagem classica com manobras relaxantes e terapeuticas', 45, 45, 210.00, 210.00),
-    ('desportiva', 'massagem voltada para alivio de tensoes musculares em atletas', 50, 80, 127.50, 280.00),
-    ('esfoliacao completa', 'remocao de celulas mortas com cremes esfoliantes', 60, 60, 120.00, 250.00),
-    ('envoltorio de argilas, chocolates ou algas', 'tratamento nutritivo com aplicacao corporal de elementos naturais', 90, 90, 690.00, 690.00),
-    ('limpeza de pele completa', 'limpeza profunda com extracao de impurezas e hidratacao facial', 60, 60, 133.00, 133.00),
-    ('hidratacao profunda e mascaras faciais nutritivas', 'tratamento facial com aplicacao de mascaras e hidratacao intensa', 60, 60, 140.00, 140.00),
-    ('massagem facial', 'massagem relaxante e estimulante para a face', 30, 30, 130.00, 130.00),
-    ('sauna seca ou a vapor', 'acesso a sauna seca ou umida para relaxamento', 30, 30, 50.00, 80.00),
-    ('banho com sais de banho', 'imersao relaxante com sais especiais', 30, 30, 100.00, 150.00);
+('aromaterapia','massagem com oleos essenciais para relaxamento e equilibrio',30, 60, 180.00, 260.00),
+('pedras quentes', 'massagem com pedras vulcanicas aquecidas para relaxamento muscular', 60, 60, 255.00, 255.00),
+('shiatsu', 'tecnica oriental com pressao dos dedos em pontos especificos', 45, 45, 260.00, 260.00),
+('com ventosa', 'massagem que utiliza ventosas para ativar a circulacao', 30, 30, 125.00, 125.00),
+('sueca', 'massagem classica com manobras relaxantes e terapeuticas', 45, 45, 210.00, 210.00),
+('desportiva', 'massagem voltada para alivio de tensoes musculares em atletas', 50, 80, 127.50, 280.00),
+('esfoliacao completa', 'remocao de celulas mortas com cremes esfoliantes', 60, 60, 120.00, 250.00),
+('envoltorio de argilas, chocolates ou algas', 'tratamento nutritivo com aplicacao corporal de elementos naturais', 90, 90, 690.00, 690.00),
+('limpeza de pele completa', 'limpeza profunda com extracao de impurezas e hidratacao facial', 60, 60, 133.00, 133.00),
+('hidratacao profunda e mascaras faciais nutritivas', 'tratamento facial com aplicacao de mascaras e hidratacao intensa', 60, 60, 140.00, 140.00),
+('massagem facial', 'massagem relaxante e estimulante para a face', 30, 30, 130.00, 130.00),
+('sauna seca ou a vapor', 'acesso a sauna seca ou umida para relaxamento', 30, 30, 50.00, 80.00),
+('banho com sais de banho', 'imersao relaxante com sais especiais', 30, 30, 100.00, 150.00);
 
 create table if not exists  pacotes (
-    codigo_pacote int auto_increment primary key,
-    nome_pacote varchar(100) not null,
-    descricao_pacote text not null,
-    preco_pacote decimal(10,2) not null,
-    duracao_pacote int not null,
-    valor_por_pessoa_extra decimal(10,2) not null default 0.00
+codigo_pacote int auto_increment primary key,
+nome_pacote varchar(100) not null,
+descricao_pacote text not null,
+preco_pacote decimal(10,2) not null,
+duracao_pacote int not null,
+valor_por_pessoa_extra decimal(10,2) not null default 0.00
 );
 
 insert into pacotes (nome, descricao, preco, duracao, valor_por_pessoa_extra) values
