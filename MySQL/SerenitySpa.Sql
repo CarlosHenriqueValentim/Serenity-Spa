@@ -19,12 +19,14 @@ values
 
 create table if not exists servicos (
 codigo_servico int auto_increment not null primary key,
+codigo_empresa int not null,
 nome_servico varchar(100) not null unique,
 descricao_servico text not null,
 duracao_min_servico int not null,
 duracao_max_servico int not null,
 preco_min_servico decimal(10,2) not null,
-preco_max_servico decimal(10,2) not null
+preco_max_servico decimal(10,2) not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
 insert into servicos
@@ -46,12 +48,15 @@ values
 
 create table if not exists pacotes (
 codigo_pacote int auto_increment primary key,
+codigo_empresa int not null,
 nome_pacote varchar(100) not null,
 descricao_pacote text not null,
 preco_pacote decimal(10,2) not null,
 duracao_pacote int not null,
-valor_por_pessoa_extra decimal(10,2) not null default 0.00
+valor_por_pessoa_extra decimal(10,2) not null default 0.00,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
+
 
 insert into pacotes 
 (nome_pacote, descricao_pacote, preco_pacote, duracao_pacote, valor_por_pessoa_extra)
@@ -62,11 +67,11 @@ values
 create table if not exists itens_pacote (
 codigo_itens_pacote int auto_increment primary key,
 codigo_pacote int not null,
-nome_servico_itens_pacote varchar(100) not null,
+codigo_servico int not null,
 ordem_execucao_itens_pacote int not null,
 quantidade_itens_pacote int not null,
 foreign key (codigo_pacote) references pacotes(codigo_pacote),
-foreign key (nome_servico_itens_pacote) references servicos(nome_servico)
+foreign key (codigo_servico) references servicos(codigo_servico)
 );
 
 insert into itens_pacote 
@@ -85,12 +90,14 @@ values
 
 create table if not exists produtos_estoque (
 codigo_produto int auto_increment not null primary key,
+codigo_empresa int not null,
 nome_produto varchar(100) not null,
 categoria_produto varchar(50) not null,
 quantidade_produto int not null,
 preco_unitario_produto decimal(10,2) not null,
 preco_total_produto decimal(10,2) not null,
-fornecedor varchar(100) not null
+fornecedor varchar(100) not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
 insert into produtos_estoque 
@@ -116,10 +123,12 @@ values
 
 create table if not exists financeiro (
 codigo_financeiro int auto_increment not null primary key,
+codigo_empresa int not null,
 tipo_financeiro enum('receita', 'despesa') not null,
 descricao_financeiro text not null,
 valor_financeiro decimal(10,2) not null,
-data_financeiro date not null
+data_financeiro date not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
 insert into financeiro(tipo_financeiro, descricao_financeiro, valor_financeiro, data_financeiro)
@@ -130,10 +139,12 @@ values
 
 create table if not exists funcionarios (
 codigo_funcionario int auto_increment not null primary key,
+codigo_empresa int not null,
 nome_funcionario varchar(100) not null,
 cargo_funcionario varchar(50) not null,
 telefone_funcionario varchar(15) not null,
-email_funcionario varchar(100) not null
+email_funcionario varchar(100) not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
 insert into funcionarios(nome_funcionario,cargo_funcionario,telefone_funcionario,email_funcionario)
@@ -144,11 +155,13 @@ values
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
+codigo_empresa int not null,
 nome_cliente varchar(200) not null,
 telefone_cliente varchar(20) not null,
 email_cliente varchar(200) not null,
 nascimento_cliente date not null,
-sexo_cliente varchar(20) not null
+sexo_cliente varchar(20) not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
 insert into clientes(nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
@@ -157,12 +170,14 @@ values
 
 create table if not exists agendamentos (
 codigo_agendamento int auto_increment not null primary key,
+codigo_empresa int not null,
 codigo_cliente int not null,
 codigo_funcionario int not null,
 codigo_servico int,
 data date not null,
 duracao time,
 status enum('agendado','concluído','cancelado') not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa),
 foreign key (codigo_cliente) references clientes(codigo_cliente),
 foreign key (codigo_funcionario) references funcionarios(codigo_funcionario),
 foreign key (codigo_servico) references servicos(codigo_servico)
