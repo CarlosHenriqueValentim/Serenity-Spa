@@ -53,7 +53,7 @@ nome_pacote varchar(100) not null,
 descricao_pacote text not null,
 preco_pacote decimal(10,2) not null,
 duracao_pacote int not null,
-valor_por_pessoa_extra decimal(10,2) not null default 0.00,
+valor_por_pessoa_extra_pacote decimal(10,2) not null default 0.00,
 foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
@@ -91,12 +91,12 @@ values
 create table if not exists produtos_estoque (
 codigo_produto int auto_increment not null primary key,
 codigo_empresa int not null,
-nome_produto varchar(100) not null,
-categoria_produto varchar(50) not null,
-quantidade_produto int not null,
-preco_unitario_produto decimal(10,2) not null,
-preco_total_produto decimal(10,2) not null,
-fornecedor varchar(100) not null,
+nome_produto_estoque varchar(100) not null,
+categoria_produto_estoque varchar(50) not null,
+quantidade_produto_estoque int not null,
+preco_unitario_produto_estoque decimal(10,2) not null,
+preco_total_produto_estoque decimal(10,2) not null,
+fornecedor_produto_estoque varchar(100) not null,
 foreign key (codigo_empresa) references empresa(codigo_empresa)
 );
 
@@ -173,9 +173,9 @@ codigo_agendamento int auto_increment not null primary key,
 codigo_empresa int not null,
 codigo_cliente int not null,
 codigo_funcionario int not null,
-codigo_servico int,
+codigo_servico int not null,
 data date not null,
-duracao time,
+duracao_agendamento time,
 status enum('agendado','concluído','cancelado') not null,
 foreign key (codigo_empresa) references empresa(codigo_empresa),
 foreign key (codigo_cliente) references clientes(codigo_cliente),
