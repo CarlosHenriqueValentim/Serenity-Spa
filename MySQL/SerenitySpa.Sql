@@ -188,6 +188,68 @@ select * from funcionarios;
 select * from clientes;
 select * from agendamentos;
 
+select pacotes.nome_pacote, itens_pacote.nome_servico_itens_pacote
+from pacotes
+inner join itens_pacote
+on pacotes.codigo_pacote = itens_pacote.codigo_pacote
+inner join servicos
+on itens_pacote.nome_servico_itens_pacote = servicos.nome_servico;
+
+select pacotes.nome_pacote, itens_pacote.nome_servico_itens_pacote
+from pacotes
+left outer join itens_pacote
+on pacotes.codigo_pacote = itens_pacote.codigo_pacote
+left outer join servicos
+on itens_pacote.nome_servico_itens_pacote = servicos.nome_servico;
+
+select pacotes.nome_pacote, servicos.nome_servico
+from pacotes
+right outer join itens_pacote
+on pacotes.codigo_pacote = itens_pacote.codigo_pacote
+right outer join servicos
+on itens_pacote.nome_servico_itens_pacote = servicos.nome_servico;
+
+select pacotes.nome_pacote, servicos.nome_servico
+from pacotes
+left outer join itens_pacote
+on pacotes.codigo_pacote = itens_pacote.codigo_pacote
+left outer join servicos
+on itens_pacote.nome_servico_itens_pacote = servicos.nome_servico
+union
+select pacotes.nome_pacote, servicos.nome_servico
+from pacotes
+right outer join itens_pacote
+on pacotes.codigo_pacote = itens_pacote.codigo_pacote
+right outer join servicos
+on itens_pacote.nome_servico_itens_pacote = servicos.nome_servico;
+
+select agendamentos.codigo_agendamento, clientes.nome_cliente, funcionarios.nome_funcionario, servicos.nome_servico
+from agendamentos
+inner join clientes
+on agendamentos.codigo_cliente = clientes.codigo_cliente
+inner join funcionarios
+on agendamentos.codigo_funcionario = funcionarios.codigo_funcionario
+inner join servicos
+on agendamentos.codigo_servico = servicos.codigo_servico;
+
+select clientes.nome_cliente, agendamentos.codigo_agendamento, funcionarios.nome_funcionario, servicos.nome_servico
+from clientes
+left outer join agendamentos
+on clientes.codigo_cliente = agendamentos.codigo_cliente
+left outer join funcionarios
+on agendamentos.codigo_funcionario = funcionarios.codigo_funcionario
+left outer join servicos
+on agendamentos.codigo_servico = servicos.codigo_servico;
+
+select clientes.nome_cliente, agendamentos.codigo_agendamento, funcionarios.nome_funcionario, servicos.nome_servico
+from clientes
+right outer join agendamentos
+on clientes.codigo_cliente = agendamentos.codigo_cliente
+right outer join funcionarios
+on agendamentos.codigo_funcionario = funcionarios.codigo_funcionario
+right outer join servicos
+on agendamentos.codigo_servico = servicos.codigo_servico;
+
 desc empresa;
 desc servicos;
 desc pacotes;
