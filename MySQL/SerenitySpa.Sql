@@ -188,6 +188,16 @@ select * from funcionarios;
 select * from clientes;
 select * from agendamentos;
 
+desc empresa;
+desc servicos;
+desc pacotes;
+desc itens_pacote;
+desc produtos_estoque;
+desc financeiro;
+desc funcionarios;
+desc clientes;
+desc agendamentos;
+
 select pacotes.nome_pacote, itens_pacote.nome_servico_itens_pacote
 from pacotes
 inner join itens_pacote
@@ -249,13 +259,3 @@ right outer join funcionarios
 on agendamentos.codigo_funcionario = funcionarios.codigo_funcionario
 right outer join servicos
 on agendamentos.codigo_servico = servicos.codigo_servico;
-
-desc empresa;
-desc servicos;
-desc pacotes;
-desc itens_pacote;
-desc produtos_estoque;
-desc financeiro;
-desc funcionarios;
-desc clientes;
-desc agendamentos;
