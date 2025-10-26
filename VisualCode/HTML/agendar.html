@@ -28,7 +28,7 @@
 
   <section class="blocos">
     <h1>Agende sua Sessão</h1>
-    <p>Preencha o formulário abaixo e entraremos em contato para confirmar seu horário.</p>
+    <p>Preencha as seguintes informações abaixo e entraremos em contato para confirmar seu horário</p>
   </section>
 
   <main>
@@ -36,7 +36,7 @@
       <div class="subtitulos">
         <form id="form-agendar">
           <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required>
 
           <label for="zap">WhatsApp</label>
           <input type="tel" id="zap" name="zap" placeholder="(11) 99999-9999" required>
@@ -66,7 +66,7 @@
           <input type="time" id="hora" name="hora" required>
 
           <label for="obs">Observações</label>
-          <textarea id="obs" name="obs" rows="4" placeholder="Alergias ou restrições"></textarea>
+          <textarea id="obs" name="obs" rows="4" placeholder="Digite sua mensagem para entrar em contato com a gente"></textarea>
 
           <button type="submit" class="btn">Enviar Agendamento</button>
           <p id="msg" class="msg"></p>

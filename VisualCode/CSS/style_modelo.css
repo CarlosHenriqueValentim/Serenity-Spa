@@ -1,6 +1,6 @@
 @font-face {
     font-family: power;
-    src: url(../FONTES/company/COMPANY.ttf);
+    src: url(../FONTES/NewYork\ PERSONAL\ USE.otf);
 }
 
 * {
@@ -12,12 +12,13 @@
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background-color: #fddde6; 
+  background-color: #fddde6;
   color: #5a3d46;
   position: relative;
   overflow-x: hidden;
+  margin: 0;
+  padding-bottom: 60px; 
 }
-
 
 body::after {
   content: "";
@@ -25,8 +26,8 @@ body::after {
   inset: 0;
   background: url("../IMAGENS/FRosa.jpg") no-repeat center bottom;
   background-size: cover;
-  opacity: 0.4; 
-  z-index: -1; 
+  opacity: 0.4;
+  z-index: -1;
 }
 
 header {
@@ -38,6 +39,19 @@ header {
   box-shadow: 0 4px 10px rgba(154, 64, 95, 0.1);
   border-radius: 0 0 18px 18px;
 }
+
+.logo,
+main h1,
+main h2,
+.blocos h1,
+.blocos h2,
+.subtitulos h2 {
+  font-family: 'power', serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #9b3f5f;
+}
+
 
 .logo {
   display: flex;
@@ -55,7 +69,6 @@ header {
   border: 2px solid #ffe4ea;
 }
 
-
 nav a {
   color: #fff;
   margin: 0 12px;
@@ -64,26 +77,30 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover, nav a.active { color: #ffc8d6; }
-
-
-.blocos {
-  text-align:center;
-  padding:80px 20px;
-  border-radius:18px;
-  margin:20px;
+nav a:hover,
+nav a.active {
+  color: #ffc8d6;
 }
 
-.blocos h1 {font-size: 2.8em;}
-.blocos p {font-size: 1.2em;}
+.blocos {
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 18px;
+  margin: 20px;
+}
 
-.btn:hover { background: #c95a7e; }
+.blocos h1 {
+  font-size: 2.8em;
+}
 
+.blocos p {
+  font-size: 1.2em;
+}
 
 .titulos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;;
+  gap: 20px;
 }
 
 .subtitulos {
@@ -91,16 +108,33 @@ nav a:hover, nav a.active { color: #ffc8d6; }
   border-radius: 18px;
   transition: transform 0.3s;
 }
-.subtitulos:hover { transform: translateY(-5px); }
 
-.subtitulos h2 { color: #9b3f5f;}
+.subtitulos:hover {
+  transform: translateY(-5px);
+}
 
+.subtitulos h2 {
+  color: #9b3f5f;
+}
 
 footer {
+   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+  color: white;
   text-align: center;
-  padding: 20px;
-  background: #f8b4c4;
-  color: #ffffff;
-  margin-top: 30px;
-  border-radius: 18px 18px 0 0;
+  padding: 15px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
 }

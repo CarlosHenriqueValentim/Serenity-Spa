@@ -1,7 +1,8 @@
 @font-face {
     font-family: power;
-    src: url(../FONTES/company/COMPANY.ttf);
+    src: url(../FONTES/NewYork\ PERSONAL\ USE.otf);
 }
+
 
 * {
     margin: 0;
@@ -16,6 +17,8 @@ body {
   color: #5a3d46;
   position: relative;
   overflow-x: hidden;
+  margin: 0;
+  padding-bottom: 60px; 
 }
 
 body::after {
@@ -36,6 +39,18 @@ header {
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
   box-shadow: 0 4px 10px rgba(154, 64, 95, 0.1);
   border-radius: 0 0 18px 18px;
+}
+
+.logo,
+main h1,
+main h2,
+.blocos h1,
+.blocos h2,
+.subtitulos h2 {
+  font-family: 'power', serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #9b3f5f;
 }
 
 .logo {
@@ -106,10 +121,23 @@ nav a.active {
 }
 
 footer {
+   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+  color: white;
   text-align: center;
-  padding: 20px;
-  background: #f8b4c4;
-  color: #fff;
-  margin-top: 30px;
-  border-radius: 18px 18px 0 0;
+  padding: 15px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
 }
