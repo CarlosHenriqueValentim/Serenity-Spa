@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary_SerenitySpa
 {
-    public class Class1
+    internal class Pessoa
     {
     }
 }

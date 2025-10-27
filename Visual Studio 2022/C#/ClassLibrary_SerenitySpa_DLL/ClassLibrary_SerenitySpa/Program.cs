@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp_SerenitySpa
+namespace ClassLibrary_SerenitySpa
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
-        { 
-
+        {
             string opcao = "";
 
             while (opcao != "q")
@@ -29,8 +28,8 @@ namespace ConsoleApp_SerenitySpa
                 Console.Write("Escolha: ");
                 opcao = Console.ReadLine();
 
-                
+
             }
         }
-    }
+        }
 }
