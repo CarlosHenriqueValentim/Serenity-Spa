@@ -3,6 +3,12 @@
     src: url(../FONTES/NewYork\ PERSONAL\ USE.otf);
 }
 
+@font-face {
+    font-family: gelo;
+    src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -94,7 +100,8 @@ nav a.active {
 }
 
 .blocos p {
-  font-size: 1.2em;
+  font-family: 'gelo', serif;
+  font-size: 2.0em;
 }
 
 .titulos {
@@ -104,16 +111,23 @@ nav a.active {
 }
 
 .subtitulos {
+  font-family: 'power', serif;
   padding: 25px;
   border-radius: 18px;
   transition: transform 0.3s;
+  font-size: 1.0em;
 }
 
 .subtitulos:hover {
   transform: translateY(-5px);
 }
 
+.subtitulos p{
+  font-size: 1.4em;
+
+}
 .subtitulos h2 {
+  font-size: 2.8em;
   color: #9b3f5f;
 }
 

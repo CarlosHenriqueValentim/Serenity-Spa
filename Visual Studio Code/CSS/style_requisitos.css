@@ -3,6 +3,11 @@
     src: url(../FONTES/NewYork\ PERSONAL\ USE.otf);
 }
 
+@font-face {
+    font-family: gelo;
+    src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
+}
+
 
 * {
     margin: 0;
