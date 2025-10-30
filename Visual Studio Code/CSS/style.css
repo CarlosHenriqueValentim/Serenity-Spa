@@ -8,6 +8,11 @@
     src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
 }
 
+@font-face {
+    font-family: fogo;
+    src: url(../FONTES/arial_narrow_7.ttf);
+}
+
 
 * {
     margin: 0;
@@ -37,12 +42,12 @@ body::after {
 }
 
 header {
+  font-family: 'fogo', serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
-  box-shadow: 0 4px 10px rgba(154, 64, 95, 0.1);
   border-radius: 0 0 18px 18px;
 }
 
@@ -90,44 +95,48 @@ nav a.active {
 
 .blocos {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 40px 10px 40px;
   border-radius: 18px;
   margin: 20px;
 }
 
 .blocos h1 {
   font-size: 2.8em;
-  margin-bottom: 15px;
 }
 
 .blocos p {
-  font-size: 1.2em;
+  font-family: 'gelo', serif;
+  font-size: 1.8em;
 }
 
 .titulos {
+  padding: 70px 70px 70px 70px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px 20px;
+  gap: 50px;
 }
 
 .subtitulos {
-  padding: 25px;
+  font-family: 'gelo', serif;
+  padding: 10px;
   border-radius: 18px;
   transition: transform 0.3s;
+  font-size: 0.9em;
+  width: 330px;
 }
 
-.subtitulos:hover {
-  transform: translateY(-5px);
-}
+.subtitulos p{
+  font-family: 'gelo', serif;
+  font-size: 1.8em;
 
+}
 .subtitulos h2 {
+  font-size: 2.5em;
   color: #9b3f5f;
-  margin-bottom: 10px;
 }
 
 footer {
-background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+  background: linear-gradient(90deg, #f8b4c4, #e07a9a);
   color: white;
   text-align: center;
   padding: 15px 10px;

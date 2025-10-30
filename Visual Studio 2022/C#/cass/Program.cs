@@ -3,13 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
-namespace ConsoleApp_SerenitySpa
+namespace cass
 {
     internal class Program
     {
         static void Main(string[] args)
-        { 
+        {
+            MySqlConnection conexao;  
+            new MySqlConnection();
+
+            try
+            {
+                conexao = new MySqlConnection("server=127.0.0.1;uid=root;pwd=root;database=ss");
+                conexao.Open();
+            } 
+
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            string sql = "select * from login";
+            cmd = new MySqlCommand(sql, conexao);
+            MySqlDataAdapter rdr = cmd.ExecuteReader();
+
+
 
             string opcao = "";
 

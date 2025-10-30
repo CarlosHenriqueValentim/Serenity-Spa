@@ -8,6 +8,11 @@
     src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
 }
 
+@font-face {
+    font-family: fogo;
+    src: url(../FONTES/arial_narrow_7.ttf);
+}
+
 
 * {
     margin: 0;
@@ -37,14 +42,15 @@ body::after {
 }
 
 header {
+  font-family: 'fogo', serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
-  box-shadow: 0 8px 20px rgba(154, 64, 95, 0.1);
   border-radius: 0 0 18px 18px;
 }
+
 
 .logo,
 main h1,
@@ -89,6 +95,7 @@ nav a.active {
 }
 
 .blocos {
+  padding: 20px 40px 20px 20px;
   text-align: center;
   border-radius: 18px;
   margin: 20px;
@@ -100,7 +107,13 @@ nav a.active {
 }
 
 .blocos p {
-  font-size: 1.2em;
+  font-family: 'gelo', serif;
+  font-size: 1.7em;
+}
+
+.btn{
+  font-family: 'gelo', serif;
+  font-size: 1.4em;
 }
 
 .titulos {

@@ -6,7 +6,6 @@
   <link rel="icon" href="../IMAGENS/Serenity.jpeg" type="image/png">
   <title>SPA Serenity - Agendar</title>
   <link rel="stylesheet" href="../CSS/style_agendar.css">
-  <script src="../JS/script_agendar.js" defer></script>
 </head>
 <body>
   <header>
@@ -22,7 +21,7 @@
       <a href="modelo.html">Modelo</a>
       <a href="processos.html">Processos</a>
       <a href="requisitos.html">Requisitos</a>
-      <a href="agendar.html" class="active">Agendar</a>
+      <a href="agendar.html">Agendar</a>
     </nav>
   </header>
 
@@ -35,14 +34,12 @@
     <section class="titulos">
       <div class="subtitulos">
         <form id="form-agendar">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required>
-
-          <label for="zap">WhatsApp</label>
-          <input type="tel" id="zap" name="zap" placeholder="(11) 99999-9999" required>
-
+          <label>Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required><br>
+          <label>WhatsApp</label>
+          <input type="tel" id="zap" name="zap" placeholder="Exemplo: (11) 99999-9999" required><br>
           <label for="servico">Serviço</label>
-          <select id="servico" name="servico" required>
+          <select id="servico" name="servico" required><br>
             <option value="Aromaterapia">Aromaterapia</option>
             <option value="Pedras quentes">Massagem com pedras quentes</option>
             <option value="Shiatsu">Shiatsu</option>
@@ -58,16 +55,12 @@
             <option value="Pacote">Pacote</option>
             <option value="Banho de sais">Banho com sais</option>
           </select>
-
-          <label for="data">Data</label>
-          <input type="date" id="data" name="data" required>
-
-          <label for="hora">Horário</label>
-          <input type="time" id="hora" name="hora" required>
-
-          <label for="obs">Observações</label>
+          <label>Data</label>
+          <input type="date" id="data" name="data" required><br>
+          <label>Horário</label>
+          <input type="time" id="hora" name="hora" required><br>
+          <label>Observações</label>
           <textarea id="obs" name="obs" rows="4" placeholder="Digite sua mensagem para entrar em contato com a gente"></textarea>
-
           <button type="submit" class="btn">Enviar Agendamento</button>
           <p id="msg" class="msg"></p>
         </form>

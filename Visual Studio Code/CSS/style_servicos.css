@@ -8,6 +8,11 @@
     src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
 }
 
+@font-face {
+    font-family: fogo;
+    src: url(../FONTES/arial_narrow_7.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -36,14 +41,15 @@ body::after {
 
 
 header {
+  font-family: 'fogo', serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
-  box-shadow: 0 4px 10px rgba(154, 64, 95, 0.1);
   border-radius: 0 0 18px 18px;
 }
+
 
 main h1,
 main h2,
@@ -54,12 +60,7 @@ main h2,
   font-weight: bold;       
   letter-spacing: 1px;
   color: #9b3f5f;          
-  text-shadow: 
-    1px 1px 0 rgb(0, 0, 0),
-   -1px 1px 0 rgb(0, 0, 0),
-    1px -1px 0 rgb(0, 0, 0),
-   -1px -1px 0 rgb(0, 0, 0);
-  padding: 2px 4px;        
+  text-shadow:#9b3f5f;     
 }
 
 .logo {
@@ -94,31 +95,23 @@ nav a.active {
 
 .blocos {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 40px 20px 20px;
   border-radius: 18px;
   margin: 20px;
 }
 
 .blocos h1 {
-   text-shadow: 
-    1px 1px 0 rgb(0, 0, 0),
-   -1px 1px 0 rgb(0, 0, 0),
-    1px -1px 0 rgb(0, 0, 0),
-   -1px -1px 0 rgb(0, 0, 0);
-   color: #ffe1eb;
+  text-shadow: 2px 2px 5px black;
+  color: #ffd0e1;
   font-size: 2.8em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .blocos p {
-   font-family: 'gelo', serif;
-   text-shadow: 
-    1px 1px 0 rgb(0, 0, 0),
-   -1px 1px 0 rgb(0, 0, 0),
-    1px -1px 0 rgb(0, 0, 0),
-   -1px -1px 0 rgb(0, 0, 0);
+  font-family: 'gelo', serif;
+  text-shadow: 2px 2px 5px black;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 .titulos {
@@ -127,33 +120,30 @@ nav a.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 40px 20px;
+  padding: 50px 50px;
 }
 
 .subtitulos {
   font-size:  1.0em;
-   text-shadow: 
-    1px 1px 0 rgb(0, 0, 0),
-   -1px 1px 0 rgb(0, 0, 0),
-    1px -1px 0 rgb(0, 0, 0),
-   -1px -1px 0 rgb(0, 0, 0);
-  padding: 25px;
+  text-shadow: 2px 2px 5px black;
+  padding: 20px;
   border-radius: 18px;
   transition: transform 0.3s;
+  font-size: 1.0em;
+  width: 330px;
 }
 
-.subtitulos:hover {
-  transform: translateY(-5px);
+
+.subtitulos p{
+  font-family: 'gelo', serif;
+  font-size: 2.0em;
 }
 
 .subtitulos h2 {
-   text-shadow: 
-    1px 1px 0 rgb(0, 0, 0),
-   -1px 1px 0 rgb(0, 0, 0),
-    1px -1px 0 rgb(0, 0, 0),
-   -1px -1px 0 rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px black;
   color: #ffd4e2;
   margin-bottom: 10px;
+  font-size: 2.2em;
 }
 
 footer {
