@@ -33,7 +33,7 @@ include __DIR__ . "/includes/header.php";
         </select><br>
 
         <label>Data:</label>
-        <input type="date" name="data" required><br>
+        <input type="date" name="data_agendamento" required><br>
 
         <label>Horário:</label>
         <input type="time" name="hora" required><br>
