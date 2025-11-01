@@ -3,7 +3,7 @@
 $host="localhost";
 $port="3306";
 $user="root";
-$senha="";
+$senha="root";
 $banco="ss";
 try{
     $conn=new PDO('mysql:host='.$host.';port='.$port.';dbname='.$banco,$user,$senha);
