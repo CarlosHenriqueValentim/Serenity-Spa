@@ -13,6 +13,12 @@
     src: url(../FONTES/arial_narrow_7.ttf);
 }
 
+@media screen and (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}
 
 * {
     margin: 0;
@@ -51,12 +57,12 @@ header {
   border-radius: 0 0 18px 18px;
 }
 
-.logo,
+.A,
 main h1,
 main h2,
-.blocos h1,
-.blocos h2,
-.subtitulos h2 {
+.B h1,
+.B h2,
+.D h2 {
   font-family: 'power', serif;
   font-weight: normal;
   letter-spacing: 1px;
@@ -64,7 +70,7 @@ main h2,
 }
 
 
-.logo {
+.A {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -72,7 +78,7 @@ main h2,
   font-size: 1.6em;
 }
 
-.logo-img {
+.A-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -93,30 +99,30 @@ nav a.active {
   color: #ffc8d6;
 }
 
-.blocos {
+.B {
   text-align: center;
   padding: 80px 40px 10px 40px;
   border-radius: 18px;
   margin: 20px;
 }
 
-.blocos h1 {
+.B h1 {
   font-size: 2.8em;
 }
 
-.blocos p {
+.B p {
   font-family: 'gelo', serif;
   font-size: 1.8em;
 }
 
-.titulos {
+.C {
   padding: 100px 100px 100px 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 50px;
 }
 
-.subtitulos {
+.D {
   font-family: 'gelo', serif;
   padding: 10px;
   border-radius: 18px;
@@ -125,12 +131,12 @@ nav a.active {
   width: 330px;
 }
 
-.subtitulos p{
+.D p{
   font-family: 'gelo', serif;
   font-size: 1.8em;
 
 }
-.subtitulos h2 {
+.D h2 {
   font-size: 2.5em;
   color: #9b3f5f;
 }
@@ -148,11 +154,4 @@ footer {
   letter-spacing: 0.5px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
-}
-
-@media screen and (max-width: 600px) {
-  footer {
-    font-size: 0.8rem;
-    padding: 12px;
-  }
 }

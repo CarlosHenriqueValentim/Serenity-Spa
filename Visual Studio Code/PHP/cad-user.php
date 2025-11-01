@@ -1,29 +1,26 @@
 <?php
-include __DIR__."/database.php";
+include __DIR__.'/database.php';
 
-if(!isset($_POST['nome'], $_POST['rg'], $_POST['data_nasc'], $_POST['login'], $_POST['senha'])){
-    header("Location: form-cad.php");
-    die();
+// Verifica se os campos foram enviados
+if(!isset($_POST['nome'], $_POST['zap'], $_POST['servico'], $_POST['data'], $_POST['hora'])){
+    header('Location: form-cad.php');
+    exit();
 }
 
+// Captura os dados do formulário
 $nome = $_POST['nome'];
-$rg = $_POST['rg'];
-$data_nasc = $_POST['data_nasc'];
-$login = $_POST['login'];
-$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+$zap = $_POST['zap'];
+$servico = $_POST['servico'];
+$data = $_POST['data'];
+$hora = $_POST['hora'];
+$obs = $_POST['obs'] ?? '';
 
-$sql = "INSERT INTO clientes (nome, rg, data_nasc, login, senha) VALUES (:nome, :rg, :data_nasc, :login, :senha)";
-$stmt = $conn->prepare($sql);
-
-$stmt->bindParam(':nome', $nome);
-$stmt->bindParam(':rg', $rg);
-$stmt->bindParam(':data_nasc', $data_nasc);
-$stmt->bindParam(':login', $login);
-$stmt->bindParam(':senha', $senha);
-
-if($stmt->execute()){
-    echo "Cadastro realizado com sucesso! <a href='login.php'>Faça login</a>";
-} else {
-    echo "Erro ao cadastrar.";
+try {
+    $stmt = $conn->prepare("INSERT INTO agendamentos (nome, zap, servico, data, hora, obs) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$nome, $zap, $servico, $data, $hora, $obs]);
+    echo "<p>Agendamento realizado com sucesso!</p>";
+} catch(PDOException $e){
+    echo "Erro: ".$e->getMessage();
 }
 ?>
+<p><a href="form-cad.php">Voltar</a></p>

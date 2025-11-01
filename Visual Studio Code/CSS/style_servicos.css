@@ -13,6 +13,13 @@
     src: url(../FONTES/arial_narrow_7.ttf);
 }
 
+@media screen and (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -53,9 +60,9 @@ header {
 
 main h1,
 main h2,
-.blocos h1,
-.blocos h2,
-.subtitulos h2 {
+.B h1,
+.B h2,
+.D h2 {
   font-family: 'power', serif;
   font-weight: bold;       
   letter-spacing: 1px;
@@ -63,7 +70,7 @@ main h2,
   text-shadow:#9b3f5f;     
 }
 
-.logo {
+.A {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -72,7 +79,7 @@ main h2,
   font-family: 'power', serif;
 }
 
-.logo-img {
+.A-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -93,28 +100,28 @@ nav a.active {
   color: #ffc8d6;
 }
 
-.blocos {
+.B {
   text-align: center;
   padding: 80px 40px 20px 20px;
   border-radius: 18px;
   margin: 20px;
 }
 
-.blocos h1 {
+.B h1 {
   text-shadow: 2px 2px 5px black;
   color: #ffd0e1;
   font-size: 2.8em;
   margin-bottom: 10px;
 }
 
-.blocos p {
+.B p {
   font-family: 'gelo', serif;
   text-shadow: 2px 2px 5px black;
   color: white;
   font-size: 1.8em;
 }
 
-.titulos {
+.C {
   text-shadow: 20px 20px 40px rgb(0, 0, 0);
   color: white;
   display: grid;
@@ -123,7 +130,7 @@ nav a.active {
   padding: 25px 25px;
 }
 
-.subtitulos {
+.D {
   font-size:  1.0em;
   text-shadow: 2px 2px 5px black;
   padding: 20px;
@@ -134,12 +141,12 @@ nav a.active {
 }
 
 
-.subtitulos p{
+.D p{
   font-family: 'gelo', serif;
   font-size: 2.0em;
 }
 
-.subtitulos h2 {
+.D h2 {
   text-shadow: 2px 2px 5px black;
   color: #ffd4e2;
   margin-bottom: 10px;
@@ -159,11 +166,4 @@ footer {
   letter-spacing: 0.5px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
-}
-
-@media screen and (max-width: 600px) {
-  footer {
-    font-size: 0.8rem;
-    padding: 12px;
-  }
 }

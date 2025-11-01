@@ -13,7 +13,6 @@
     src: url(../FONTES/arial_narrow_7.ttf);
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +26,6 @@ body {
   color: #5a3d46;
   position: relative;
   overflow-x: hidden;
-  margin: 0;
   padding-bottom: 60px; 
 }
 
@@ -51,21 +49,19 @@ header {
   border-radius: 0 0 18px 18px;
 }
 
-
-.logo,
+.A,
 main h1,
 main h2,
-.blocos h1,
-.blocos h2,
-.subtitulos h2 {
+.B h1,
+.B h2,
+.D h2 {
   font-family: 'power', serif;
   font-weight: normal;
   letter-spacing: 1px;
   color: #9b3f5f;
 }
 
-
-.logo {
+.A {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -73,7 +69,7 @@ main h2,
   font-size: 1.6em;
 }
 
-.logo-img {
+.A-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -94,37 +90,36 @@ nav a.active {
   color: #ffc8d6;
 }
 
-.blocos {
+.B {
   padding: 20px 40px 20px 20px;
   text-align: center;
   border-radius: 18px;
   margin: 20px;
 }
 
-.blocos h1 {
+.B h1 {
   font-size: 2.8em;
   margin-bottom: 15px;
 }
 
-.blocos p {
+.B p {
   font-family: 'gelo', serif;
   font-size: 1.7em;
 }
 
-.btn{
+.btn {
   font-family: 'gelo', serif;
   font-size: 1.4em;
 }
 
-.titulos {
+.C {
   display: grid;
   grid-template-columns: 1fr;
   max-width: 500px;
   margin: 40px auto;
 }
 
-
-.subtitulos {
+.D {
   border-radius: 18px;
 }
 
@@ -161,10 +156,80 @@ button.btn:hover {
 }
 
 .msg {
+  font-family: 'fogo', serif;
   text-align: center;
   color: #9b3f5f;
   font-weight: bold;
   margin-top: 10px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: 'power', serif;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #9b3f5f;
+}
+
+.login-container form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #5a3d46;
+    text-align: left;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #f8b4c4;
+    margin-bottom: 15px;
+    font-size: 1em;
+    font-family: 'gelo', serif;
+}
+
+.login-container form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #e07a9a;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container form input[type="submit"]:hover {
+    background: #c95a7e;
+}
+
+.login-container .msg {
+    margin-top: 15px;
+    color: #9b3f5f;
+    font-weight: 500;
+    font-family: 'gelo', serif;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+
+  .login-container {
+    margin: 50px 20px;
+    padding: 20px;
+  }
 }
 
 footer {
@@ -180,11 +245,4 @@ footer {
   letter-spacing: 0.5px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
-}
-
-@media screen and (max-width: 600px) {
-  footer {
-    font-size: 0.8rem;
-    padding: 12px;
-  }
 }
