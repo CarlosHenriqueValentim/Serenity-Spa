@@ -152,6 +152,57 @@ footer {
   width: 100%;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 5px rgba(253, 86, 178, 0.1);
   z-index: 10;
+}
+
+nav a {
+  display: inline-block;
+  position: relative;
+  color:  #5a3d46;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+
+nav a.hover-animate {
+  color: #fff;
+  background: linear-gradient(135deg, #f857a8, #ff5cc1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+nav a.clicked {
+  transform: scale(0.93);
+  transition: transform 0.15s ease;
+}
+
+
+nav a:focus-visible {
+  outline: 2px solid #d35384;
+  outline-offset: 4px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg,#f857a8, #ff5cc1);
+  transition: all 0.35s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+nav a.hover-animate::after {
+  width: 80%;
+}
+
+nav a {
+  will-change: opacity, transform;
 }
