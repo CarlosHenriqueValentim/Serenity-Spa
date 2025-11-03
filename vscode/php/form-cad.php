@@ -3,18 +3,18 @@ include __DIR__ . "/includes/header.php";
 ?>
 
 <main>
-  <section class="C">
-    <div class="D">
+  <section class="H"> 
+    <div class="I"> 
       <form action="cad-agendar.php" method="post">
-        <h2>Agende sua Sessão</h2>
+        <h1>Agende sua Sessão</h1>
 
-        <label>Nome:</label>
+        <label>Nome</label>
         <input type="text" name="nome" placeholder="Digite seu nome" maxlength="100" required><br>
 
-        <label>WhatsApp:</label>
+        <label>WhatsApp</label>
         <input type="tel" name="zap" placeholder="Exemplo: (11) 99999-9999" maxlength="15" required><br>
 
-        <label>Serviço:</label>
+        <label>Serviço</label>
         <select name="servico" required>
           <option value="Aromaterapia">Aromaterapia</option>
           <option value="Pedras quentes">Massagem com pedras quentes</option>
@@ -32,13 +32,13 @@ include __DIR__ . "/includes/header.php";
           <option value="Banho de sais">Banho com sais</option>
         </select><br>
 
-        <label>Data:</label>
+        <label>Data</label>
         <input type="date" name="data_agendamento" required><br>
 
-        <label>Horário:</label>
+        <label>Horário</label>
         <input type="time" name="hora" required><br>
 
-        <label>Observações:</label>
+        <label>Observações</label>
         <textarea name="obs" rows="4" placeholder="Digite sua mensagem para entrar em contato com a gente"></textarea><br>
 
         <input type="submit" value="Enviar Agendamento">
