@@ -1,0 +1,13 @@
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\obj\Debug\cass.csproj.AssemblyReference.cache
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\obj\Debug\cass.csproj.CoreCompileInputs.cache
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\obj\Debug\ConsoleApp_SerenitySpa.exe
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\obj\Debug\ConsoleApp_SerenitySpa.pdb
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\ConsoleApp_SerenitySpa.exe.config
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\ConsoleApp_SerenitySpa.exe
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\ConsoleApp_SerenitySpa.pdb
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\MySql.Data.dll
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\System.Memory.dll
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\bin\Debug\MySql.Data.xml
+C:\Users\Rick\Desktop\ss\vs2022\C#\cass\obj\Debug\cass.csproj.Up2Date
