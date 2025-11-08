@@ -1,0 +1,13 @@
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_SerenitySpa.exe.config
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_SerenitySpa.exe
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_SerenitySpa.pdb
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\System.Memory.dll
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\System.Numerics.Vectors.dll
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\bin\Debug\MySql.Data.xml
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.AssemblyReference.cache
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.exe.config
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.CoreCompileInputs.cache
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleA.808F0340.Up2Date
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.exe
+C:\wamp64\www\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.pdb

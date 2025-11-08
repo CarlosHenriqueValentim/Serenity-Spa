@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|c:\\wamp64\\www\\serenity-spa\\sistema - local\\visual studio 2022\\c#\\cass\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|solutionrelative:cass\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|c:\\wamp64\\www\\serenity-spa\\sistema - local\\visual studio 2022\\c#\\cass\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|solutionrelative:cass\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\CASERENITYSPA.csproj|c:\\wamp64\\www\\serenity-spa\\sistema - local\\visual studio 2022\\c#\\cass\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\CASERENITYSPA.csproj|solutionrelative:cass\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|c:\\wamp64\\www\\serenity-spa\\sistema - local\\visual studio 2022\\c#\\cass\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8AEA92-1781-47ED-9D0F-538AA6A0D455}|cass\\ConsoleApp_SerenitySpa.csproj|solutionrelative:cass\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Cliente.cs",
+              "RelativeDocumentMoniker": "cass\\Cliente.cs",
+              "ToolTip": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Cliente.cs*",
+              "RelativeToolTip": "cass\\Cliente.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T04:23:39.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Empresa.cs",
+              "RelativeDocumentMoniker": "cass\\Empresa.cs",
+              "ToolTip": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Empresa.cs*",
+              "RelativeToolTip": "cass\\Empresa.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T04:23:34.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Funcionario.cs",
+              "RelativeDocumentMoniker": "cass\\Funcionario.cs",
+              "ToolTip": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Funcionario.cs*",
+              "RelativeToolTip": "cass\\Funcionario.cs*",
+              "ViewState": "AgIAABoAAAAAAAAAAAAiwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T04:23:29.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Program.cs",
+              "RelativeDocumentMoniker": "cass\\Program.cs",
+              "ToolTip": "C:\\wamp64\\www\\Serenity-Spa\\SISTEMA - LOCAL\\Visual Studio 2022\\C#\\cass\\Program.cs*",
+              "RelativeToolTip": "cass\\Program.cs*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T04:21:40.933Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
