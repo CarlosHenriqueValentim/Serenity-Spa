@@ -1,6 +1,6 @@
-drop database if exists ss;
-create database if not exists ss;
-use ss;
+drop database if exists Serenity_Spa;
+create database if not exists Serenity_Spa;
+use Serenity_Spa;
 
 create table if not exists empresa (
 codigo_empresa int auto_increment not null primary key,
@@ -10,29 +10,33 @@ cnpj_empresa varchar(20) not null,
 localizacao_empresa varchar(200) not null,
 telefone_empresa varchar(20) not null,
 email_empresa varchar(100) not null,
-site_empresa varchar(100) not null
+site_empresa varchar(100) not null,
+unique key uq_empresa_cnpj (cnpj_empresa),
+unique key uq_empresa_email (email_empresa)
 );
 
-insert into empresa 
+insert into empresa
 (razao_social, nome_fantasia, cnpj_empresa, localizacao_empresa, telefone_empresa, email_empresa, site_empresa)
-values 
-('Serenity Spa e Massagens LTDA', 'Serenity Spa', '93911881000183', 'Rua Pedro Bibiano, Jardim Barcelona, Presidente Prudente - SP', '11986288806', 'contato@serenityspa.com', 'serenityspa.com.br');
+values
+('Serenity Spa e Massagens LTDA', 'Serenity Spa', '93911881000183', 'Rua Pedro Bibiano, Jardim Barcelona, Presidente Prudente - SP', '11986288806', 'contato@serenityspa.com
+', 'serenityspa.com.br');
 
 create table if not exists servicos (
 codigo_servico int auto_increment not null primary key,
 codigo_empresa int not null,
-nome_servico varchar(100) not null unique,
+nome_servico varchar(100) not null,
 descricao_servico text not null,
 duracao_min_servico int not null,
 duracao_max_servico int not null,
 preco_min_servico decimal(10,2) not null,
 preco_max_servico decimal(10,2) not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+unique key uq_servicos_nome (codigo_empresa, nome_servico),
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade
 );
 
 insert into servicos
 (codigo_empresa, nome_servico, descricao_servico, duracao_min_servico, duracao_max_servico, preco_min_servico, preco_max_servico)
-values 
+values
 (1, 'Aromaterapia','Massagem com óleos essenciais para relaxamento e equilíbrio',30,60,180.00,260.00),
 (1, 'Pedras Quentes', 'Massagem com pedras vulcânicas aquecidas para relaxamento muscular', 60,60,255.00,255.00),
 (1, 'Shiatsu', 'Técnica oriental com pressão dos dedos em pontos específicos', 45,45,260.00,260.00),
@@ -55,12 +59,12 @@ descricao_pacote text not null,
 preco_pacote decimal(10,2) not null,
 duracao_pacote int not null,
 valor_por_pessoa_extra_pacote decimal(10,2) not null default 0.00,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade
 );
 
-insert into pacotes 
+insert into pacotes
 (codigo_empresa, nome_pacote, descricao_pacote, preco_pacote, duracao_pacote, valor_por_pessoa_extra_pacote)
-values 
+values
 (1, 'Spa Day Dois ou Mais', 'Escalda pés aromático, hidratação profunda, massagem facial, massagem relaxante corporal, shiatsu', 813.00, 180, 150.00),
 (1, 'Spa Day Individual', 'Ritual de recepção, esfoliação corporal com lama quente e óleos essenciais, escalda pés aromático, massagem corporal com pedras quentes, hidratação profunda, massagem facial relaxante', 713.00, 240, 0.01);
 
@@ -70,13 +74,13 @@ codigo_pacote int not null,
 codigo_servico int not null,
 ordem_execucao_itens_pacote int not null,
 quantidade_itens_pacote int not null,
-foreign key (codigo_pacote) references pacotes(codigo_pacote),
-foreign key (codigo_servico) references servicos(codigo_servico)
+foreign key (codigo_pacote) references pacotes(codigo_pacote) on delete cascade on update cascade,
+foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );
 
-insert into itens_pacote 
+insert into itens_pacote
 (codigo_pacote, codigo_servico, ordem_execucao_itens_pacote, quantidade_itens_pacote)
-values 
+values
 (1, 13, 1, 1),
 (1, 10, 2, 1),
 (1, 11, 3, 1),
@@ -97,12 +101,12 @@ quantidade_produto_estoque int not null,
 preco_unitario_produto_estoque decimal(10,2) not null,
 preco_total_produto_estoque decimal(10,2) not null,
 fornecedor_produto_estoque varchar(100) not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade
 );
 
-insert into produtos_estoque 
+insert into produtos_estoque
 (codigo_empresa, nome_produto_estoque, categoria_produto_estoque, quantidade_produto_estoque, preco_unitario_produto_estoque, preco_total_produto_estoque, fornecedor_produto_estoque)
-values 
+values
 (1, 'Maca dobrável', 'Equipamento', 1, 1310.00, 1310.00, 'Andrey'),
 (1, 'Kit bolsa térmica com pedras quentes', 'Equipamento', 1, 163.33, 163.33, 'Mercado Livre'),
 (1, 'Kit 12 ventosas', 'Acessório', 1, 47.99, 47.99, 'Mercado Livre'),
@@ -128,7 +132,7 @@ tipo_financeiro enum('receita', 'despesa') not null,
 descricao_financeiro text not null,
 valor_financeiro decimal(10,2) not null,
 data_financeiro date not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade
 );
 
 insert into financeiro(codigo_empresa, tipo_financeiro, descricao_financeiro, valor_financeiro, data_financeiro)
@@ -144,14 +148,18 @@ nome_funcionario varchar(100) not null,
 cargo_funcionario varchar(50) not null,
 telefone_funcionario varchar(15) not null,
 email_funcionario varchar(100) not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
+unique key uq_funcionarios_email (email_funcionario)
 );
 
 insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario)
-values 
-(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com'),
-(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com'),
-(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com');
+values
+(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com
+'),
+(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com
+'),
+(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com
+');
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
@@ -160,13 +168,15 @@ nome_cliente varchar(200) not null,
 telefone_cliente varchar(20) not null,
 email_cliente varchar(200) not null,
 nascimento_cliente date not null,
-sexo_cliente varchar(20) not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa)
+sexo_cliente char(1) not null check (sexo_cliente in ('m','f')),
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
+unique key uq_clientes_email (email_cliente)
 );
 
 insert into clientes(codigo_empresa, nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
-values 
-(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com','1998-08-03','Feminino');
+values
+(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com
+','1998-08-03','f');
 
 create table if not exists agendamentos (
 codigo_agendamento int auto_increment not null primary key,
@@ -176,9 +186,9 @@ codigo_funcionario int not null,
 codigo_servico int not null,
 data date not null,
 duracao_agendamento time,
-status enum('agendado','concluído','cancelado') not null,
-foreign key (codigo_empresa) references empresa(codigo_empresa),
-foreign key (codigo_cliente) references clientes(codigo_cliente),
-foreign key (codigo_funcionario) references funcionarios(codigo_funcionario),
-foreign key (codigo_servico) references servicos(codigo_servico)
+status enum('agendado','concluido','cancelado') not null,
+foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
+foreign key (codigo_cliente) references clientes(codigo_cliente) on delete restrict on update cascade,
+foreign key (codigo_funcionario) references funcionarios(codigo_funcionario) on delete restrict on update cascade,
+foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );

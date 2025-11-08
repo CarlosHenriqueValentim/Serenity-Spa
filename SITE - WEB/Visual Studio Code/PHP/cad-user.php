@@ -1,13 +1,11 @@
 <?php
 include __DIR__.'/database.php';
 
-// Verifica se os campos foram enviados
 if(!isset($_POST['nome'], $_POST['zap'], $_POST['servico'], $_POST['data'], $_POST['hora'])){
     header('Location: form-cad.php');
     exit();
 }
 
-// Captura os dados do formulário
 $nome = $_POST['nome'];
 $zap = $_POST['zap'];
 $servico = $_POST['servico'];
