@@ -7,7 +7,7 @@
     <script src="../js/script.js"></script>
     <title>SPA Serenity</title>
 </head>
-<body class="OA">
+<body class="CorpoPadrão">
     <header>
         <div class="A"> 
             <img src="../IMAGENS/Serenity.jpeg" alt="Logo Serenity" class="A-img">

@@ -42,7 +42,7 @@ body {
   padding-bottom: 60px; 
 }
 
-.OA::after {
+.CorpoPadrão::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -52,7 +52,7 @@ body {
   z-index: -1;
 }
 
-.BS::after {
+.CorpoServiços::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -315,7 +315,7 @@ button.btn:hover {
 nav a {
   display: inline-block;
   position: relative;
-  color:  #5a3d46;
+  color:  #9b3f5f;
   font-weight: 500;
   text-decoration: none;
   padding: 10px 16px;
