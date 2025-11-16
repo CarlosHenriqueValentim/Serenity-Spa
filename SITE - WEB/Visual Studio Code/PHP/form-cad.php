@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/includes/header.php";
+include __DIR__ . "/includes/header1.php";
 ?>
 
 <main>
@@ -9,7 +9,10 @@ include __DIR__ . "/includes/header.php";
         <h1>Agende sua Sessão</h1>
 
         <label>Nome</label>
-        <input type="text" name="nome" placeholder="Digite seu nome" maxlength="100" required><br>
+        <input type="text" name="nome" placeholder="Digite seu Nome" maxlength="100" required><br>
+
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Digite seu Email" maxlength="100" required><br>
 
         <label>WhatsApp</label>
         <input type="tel" name="zap" placeholder="Exemplo: (11) 99999-9999" maxlength="15" required><br>

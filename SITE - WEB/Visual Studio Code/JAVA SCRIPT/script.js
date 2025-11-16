@@ -29,3 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.querySelectorAll('.link-suave').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    
+    const destino = this.href; 
+    document.body.classList.add('fade-out'); 
+
+
+    setTimeout(() => {
+      window.location.href = destino;
+    }, 500); 
+  });
+});
+
+document.querySelectorAll('.link-suave').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // previne redirecionamento imediato
+    const destino = this.href;
+
+    const overlay = document.getElementById('overlay');
+    overlay.style.pointerEvents = 'all';
+    overlay.style.opacity = 1; // inicia a animação
+
+    setTimeout(() => {
+      window.location.href = destino; // depois do fade, redireciona
+    }, 500); // tempo igual ao transition do CSS
+  });
+});
