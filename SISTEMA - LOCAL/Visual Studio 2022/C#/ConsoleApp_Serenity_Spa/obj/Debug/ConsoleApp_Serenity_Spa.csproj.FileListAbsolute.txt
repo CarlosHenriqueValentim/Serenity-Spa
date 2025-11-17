@@ -16,3 +16,12 @@ C:\xampp\htdocs\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Se
 C:\xampp\htdocs\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.exe
 C:\xampp\htdocs\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.pdb
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.AssemblyReference.cache
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.exe.config
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.Login.resources
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.ParteVisual.resources
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.UserControl1.resources
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.GenerateResource.cache
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.CoreCompileInputs.cache
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.exe
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_SerenitySpa.pdb
