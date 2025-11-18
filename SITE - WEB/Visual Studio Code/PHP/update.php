@@ -3,7 +3,7 @@ include __DIR__ . '/database.php';
 
 if (!isset($_POST['nome'], $_POST['desc'], $_POST['data_ini'], $_POST['dia'], $_POST['id'])) {
     header('Location: painel.php');
-    exit;
+    die();
 }
 
 try {
