@@ -2,14 +2,12 @@
 include __DIR__ . '/database.php';
 include __DIR__ . '/includes/header.php';
 
-// Se já estiver logado, redireciona
 if (!empty($_SESSION['usuario'])) {
     header('Location: painel.php');
     exit;
 }
-
-// Formulário de login simples — o processamento fica em logar.php
 ?>
+    
 <section class="H">
   <div class="I">
     <h1>Entrar</h1>
