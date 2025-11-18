@@ -7,34 +7,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_SerenitySpa
 {
-    internal class Ler
+    public static class Ler
     {
-        public static void MostrarClientesTabela()
+        public static void MostrarClientes(int codigoEmpresa)
         {
-            MySqlConnection conexao = Conexao.Conectar();
-            string sql = "SELECT * FROM clientes";
-            MySqlCommand cmd = new MySqlCommand(sql, conexao);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            // Cabeçalho da tabela
-            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
-            Console.WriteLine("| ID | Nome                     | Telefone        | Email                     | Nascimento | Sexo |");
-            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
-
-            // Conteúdo da tabela
-            while (reader.Read())
+            using (MySqlConnection conexao = Conexao.Conectar())
             {
-                string linha = String.Format("| {0,-2} | {1,-24} | {2,-15} | {3,-25} | {4,-10} | {5,-4} |",
-                    reader["codigo_cliente"],
-                    reader["nome_cliente"],
-                    reader["telefone_cliente"],
-                    reader["email_cliente"],
-                    Convert.ToDateTime(reader["nascimento_cliente"]).ToString("yyyy-MM-dd"),
-                    reader["sexo_cliente"]);
-                Console.WriteLine(linha);
-            }
+                string sql = "SELECT * FROM clientes WHERE codigo_empresa=@empresa";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                cmd.Parameters.AddWithValue("@empresa", codigoEmpresa);
 
-            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Console.WriteLine("ID | Nome | Telefone | Email | Nascimento | Sexo");
+                Console.WriteLine("----------------------------------------------------------");
+
+                while (reader.Read())
+                {
+                    Console.WriteLine($"{reader["codigo_cliente"]} | {reader["nome_cliente"]} | {reader["telefone_cliente"]} | {reader["email_cliente"]} | {reader["nascimento_cliente"]} | {reader["sexo_cliente"]}");
+                }
+            }
         }
     }
 }

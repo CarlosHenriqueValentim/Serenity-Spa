@@ -9,35 +9,12 @@ namespace ConsoleApp_SerenitySpa
 {
     public class Cliente
     {
-        public int Codigo { get; set; }
-        public int Empresa { get; set; }
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
-        public string Nascimento { get; set; }
-        public string Sexo { get; set; }
-
-        public void AlterarDados()
-        {
-            Console.WriteLine("Digite novo nome:");
-            Nome = Console.ReadLine();
-
-            Console.WriteLine("Digite novo telefone:");
-            Telefone = Console.ReadLine();
-
-            Console.WriteLine("Digite novo email:");
-            Email = Console.ReadLine();
-
-            Console.WriteLine("Digite nova data de nascimento (yyyy-mm-dd):");
-            Nascimento = Console.ReadLine();
-
-            Console.WriteLine("Digite sexo (m/f):");
-            Sexo = Console.ReadLine();
-        }
-
-        public void Exibir()
-        {
-            Console.WriteLine($"ID: {Codigo} | Nome: {Nome} | Telefone: {Telefone} | Email: {Email} | Nascimento: {Nascimento} | Sexo: {Sexo}");
-        }
+        public int CodigoCliente { get; set; }      // Código do cliente (PK)
+        public int CodigoEmpresa { get; set; }      // Empresa
+        public string Nome { get; set; }            // Nome do cliente
+        public string Telefone { get; set; }        // Telefone
+        public string Email { get; set; }           // Email
+        public DateTime Nascimento { get; set; }    // Data de nascimento
+        public string Sexo { get; set; }            // Sexo
     }
 }

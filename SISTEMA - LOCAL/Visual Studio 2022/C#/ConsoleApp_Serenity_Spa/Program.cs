@@ -1,5 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,26 @@ namespace ConsoleApp_SerenitySpa
 {
     internal class Program
     {
+        [STAThread] // necessário para Windows Forms
         static void Main(string[] args)
+        {
+            Console.WriteLine("Deseja abrir a interface gráfica? (s/n)");
+            string opcaoGUI = Console.ReadLine();
+
+            if (opcaoGUI.ToLower() == "s")
+            {
+                // Inicializa a interface gráfica
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ParteVisual());
+            }
+            else
+            {
+                MenuConsole();
+            }
+        }
+
+        static void MenuConsole()
         {
             string opcao;
             int empresa = 1; // código da empresa padrão
@@ -19,7 +39,6 @@ namespace ConsoleApp_SerenitySpa
                 Console.Clear();
                 DesenharCabecalho();
 
-                // Menu centralizado com espaçamento
                 Console.WriteLine("                       MENU PRINCIPAL                       ");
                 Console.WriteLine("============================================================");
                 Console.WriteLine(" 1 - Cadastrar Cliente");
@@ -38,22 +57,22 @@ namespace ConsoleApp_SerenitySpa
                 {
                     case "1":
                         DesenharTitulo("CADASTRO DE CLIENTE");
-                        Criar.CadastrarCliente(empresa);
+                        Criar.CadastrarCliente(empresa, nascimento, cmd); // certifique-se que o método existe na classe Criar
                         break;
 
                     case "2":
                         DesenharTitulo("LISTA DE CLIENTES");
-                        Ler.MostrarClientesTabela();
+                        Ler.MostrarClientes(empresa); // certifique-se que o método existe na classe Ler
                         break;
 
                     case "3":
                         DesenharTitulo("ATUALIZAR CLIENTE");
-                        Atualizar.AtualizarCliente();
+                        Atualizar.AtualizarCliente(); // certifique-se que o método existe na classe Atualizar
                         break;
 
                     case "4":
                         DesenharTitulo("EXCLUIR CLIENTE");
-                        Excluir.ExcluirCliente();
+                        Excluir.ExcluirCliente(); // certifique-se que o método existe na classe Excluir
                         break;
 
                     case "0":
