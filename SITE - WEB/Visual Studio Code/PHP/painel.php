@@ -33,4 +33,6 @@ if (!isset($_SESSION['usuario'])) {
         ?>
     </section>
 </main>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php
+include __DIR__ . '/includes/footer.php'; 
+?>
