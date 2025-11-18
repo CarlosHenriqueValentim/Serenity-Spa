@@ -1,4 +1,3 @@
--- banco.sql completo fornecido (mantive todas as tabelas do Serenity_Spa que você mandou)
 drop database if exists Serenity_Spa;
 create database if not exists Serenity_Spa;
 use Serenity_Spa;
@@ -19,7 +18,8 @@ unique key uq_empresa_email (email_empresa)
 insert into empresa
 (razao_social, nome_fantasia, cnpj_empresa, localizacao_empresa, telefone_empresa, email_empresa, site_empresa)
 values
-('Serenity Spa e Massagens LTDA', 'Serenity Spa', '93911881000183', 'Rua Pedro Bibiano, Jardim Barcelona, Presidente Prudente - SP', '11986288806', 'contato@serenityspa.com', 'serenityspa.com.br');
+('Serenity Spa e Massagens LTDA', 'Serenity Spa', '93911881000183', 'Rua Pedro Bibiano, Jardim Barcelona, Presidente Prudente - SP', '11986288806', 'contato@serenityspa.com
+', 'serenityspa.com.br');
 
 create table if not exists servicos (
 codigo_servico int auto_increment not null primary key,
@@ -154,9 +154,12 @@ unique key uq_funcionarios_email (email_funcionario)
 
 insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario)
 values
-(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com'),
-(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com'),
-(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com');
+(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com
+'),
+(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com
+'),
+(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com
+');
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
@@ -172,7 +175,8 @@ unique key uq_clientes_email (email_cliente)
 
 insert into clientes(codigo_empresa, nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
 values
-(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com','1998-08-03','f');
+(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com
+','1998-08-03','f');
 
 create table if not exists agendamentos (
 codigo_agendamento int auto_increment not null primary key,
@@ -188,48 +192,3 @@ foreign key (codigo_cliente) references clientes(codigo_cliente) on delete restr
 foreign key (codigo_funcionario) references funcionarios(codigo_funcionario) on delete restrict on update cascade,
 foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );
-
--- adiciono tabela agendamentos_simples para formulários diretos
-create table if not exists agendamentos_simples (
-  id int auto_increment primary key,
-  nome varchar(100) not null,
-  telefone varchar(30) not null,
-  servico varchar(100) not null,
-  data date not null,
-  hora time not null,
-  obs text,
-  criado_em datetime default now()
-);
-
--- também incluo a tabela usuario e agenda do "Projeto Finalizado" (para compatibilidade)
-create table if not exists usuario(
-	id_user int auto_increment,
-    nome_user varchar(100) not null,
-    rg_user char(9) unique,
-    data_nasc_user date,
-    data_cad_user datetime,
-    login_user varchar(100) unique not null,
-    senha_user varchar(100) not null,
-    primary key(id_user)
-);
-
-create table if not exists agenda(
-	id_ag int auto_increment,
-    id_user int not null,
-    desc_ag varchar(255) not null,
-    nome_ag varchar(50) not null,
-    data_ini_ag date,
-    dia_ag int not null default 1,
-    primary key(id_ag),
-    foreign key(id_user) references usuario(id_user)
-	on delete cascade
-);
-
--- Insere usuário e agenda de exemplo do Projeto Finalizado
-insert into usuario(nome_user,rg_user,data_nasc_user,data_cad_user,login_user,senha_user)values
-('Josney Almeida','663847364','1991-04-23', now(),'jojo_bizarre','jf45T&'),
-('Fernanda Helena Pereira','443948273','1997-08-18',now(),'fefe_metal','jdur493');
-
-insert into agenda(id_user,desc_ag,nome_ag,data_ini_ag,dia_ag)values
-(1,'Trocar a bateria do carro','bateria','2025-10-22',1),
-(2,'Ensaio com a banda','ensaio','2025-10-29',1);
