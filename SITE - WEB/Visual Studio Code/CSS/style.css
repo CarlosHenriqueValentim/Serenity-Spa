@@ -31,7 +31,6 @@
     box-sizing: border-box;
 }
 
-
 #overlay {
   position: fixed;
   top: 0;
@@ -44,7 +43,6 @@
   transition: opacity 0.5s ease;
   z-index: 9999;
 }
-
 
 body.fade-out {
   opacity: 0;
@@ -100,7 +98,6 @@ header {
   letter-spacing: 1px;
   color: #9b3f5f;
 }
-
 
 .A {
   display: flex;
@@ -166,7 +163,6 @@ nav a.active {
 .D p{
   font-family: 'gelo', serif;
   font-size: 1.8em;
-
 }
 .D h2 {
   font-size: 2.5em;
@@ -256,7 +252,6 @@ nav a.active {
   letter-spacing: 1px;
 }
 
-
 label {
   font-size: 20px;
   font-family: "Verdana", "Geneva", sans-serif;
@@ -294,17 +289,6 @@ input[type="reset"]:hover {
 background: linear-gradient(90deg, #f8b4c4, #e07a9a);
 }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #ff7797;
-  margin-bottom: 10px;
-  color: black;
-}
-
 button.btn {
   width: 100%;
   padding: 15px;
@@ -329,7 +313,6 @@ button.btn:hover {
   color: #9b3f5f;
   font-weight: bold;
   margin-top: auto;
-
 }
 
 nav a {
@@ -343,7 +326,6 @@ nav a {
   transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
-
 nav a.hover-animate {
   color: #fff;
   background: linear-gradient(135deg, #f857a8, #ff5cc1);
@@ -351,12 +333,10 @@ nav a.hover-animate {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-
 nav a.clicked {
   transform: scale(0.93);
   transition: transform 0.15s ease;
 }
-
 
 nav a:focus-visible {
   outline: 2px solid #d35384;
@@ -377,10 +357,6 @@ nav a::after {
 }
 nav a.hover-animate::after {
   width: 80%;
-}
-
-nav a {
-  will-change: opacity, transform;
 }
 
 footer {
