@@ -1,9 +1,6 @@
 <?php
-// PHP/logar.php
 include __DIR__ . '/database.php';
-
-// Garante sessão (sem provocar aviso)
-if (session_status() == PHP_SESSION_NONE) session_start();
+session_start();
 
 if (!isset($_POST['login'], $_POST['senha'])) {
     header('Location: index.php');
@@ -26,7 +23,7 @@ try {
     }
 
     $data = $consulta->fetch(PDO::FETCH_OBJ);
-    // seta sessão
+
     $_SESSION['usuario'] = ['id' => $data->id_user, 'nome' => $data->nome_user];
     header('Location: painel.php');
     exit;
