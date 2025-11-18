@@ -5,26 +5,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerenitySpa.CRUD
+namespace ConsoleApp_SerenitySpa
 {
-    class Ler
+    internal class Ler
     {
-        public static void MostrarClientes()
+        public static void MostrarClientesTabela()
         {
             MySqlConnection conexao = Conexao.Conectar();
-
             string sql = "SELECT * FROM clientes";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            Console.WriteLine("\nLista de Clientes:\n");
+            // Cabeçalho da tabela
+            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
+            Console.WriteLine("| ID | Nome                     | Telefone        | Email                     | Nascimento | Sexo |");
+            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
+
+            // Conteúdo da tabela
             while (reader.Read())
             {
-                Console.WriteLine($"ID: {reader["id_cliente"]} | Nome: {reader["nome"]} | Email: {reader["email"]} | Telefone: {reader["telefone"]}");
+                string linha = String.Format("| {0,-2} | {1,-24} | {2,-15} | {3,-25} | {4,-10} | {5,-4} |",
+                    reader["codigo_cliente"],
+                    reader["nome_cliente"],
+                    reader["telefone_cliente"],
+                    reader["email_cliente"],
+                    Convert.ToDateTime(reader["nascimento_cliente"]).ToString("yyyy-MM-dd"),
+                    reader["sexo_cliente"]);
+                Console.WriteLine(linha);
             }
 
-            Console.WriteLine();
-            Conexao.Desconectar(conexao);
+            Console.WriteLine("+----+--------------------------+-----------------+---------------------------+------------+------+");
         }
     }
 }

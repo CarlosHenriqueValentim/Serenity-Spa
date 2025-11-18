@@ -63,14 +63,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionario.cs" />
+    <Compile Include="ItensPacote.cs" />
     <Compile Include="Ler.cs" />
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Pacote.cs" />
     <Compile Include="ParteVisual.cs">
       <SubType>Form</SubType>
@@ -202,9 +196,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParteVisual.resx">
       <DependentUpon>ParteVisual.cs</DependentUpon>

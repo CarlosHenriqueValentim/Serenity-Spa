@@ -11,18 +11,19 @@ namespace ConsoleApp_SerenitySpa
     {
         public static void ExcluirCliente()
         {
-            MySqlConnection conexao = Conexao.Conectar();
-
-            Console.WriteLine("Digite o ID do cliente que deseja excluir:");
+            Console.Write("ID do cliente: ");
             int id = int.Parse(Console.ReadLine());
 
-            string sql = "DELETE FROM clientes WHERE id_cliente = @id";
-
+            MySqlConnection conexao = Conexao.Conectar();
+            string sql = "DELETE FROM clientes WHERE codigo_cliente=@id";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
+            int linhas = cmd.ExecuteNonQuery();
 
-            cmd.ExecuteNonQuery();
-            Console.WriteLine("Cliente excluído com sucesso!\n");
+            if (linhas > 0)
+                Console.WriteLine("Cliente excluído com sucesso!");
+            else
+                Console.WriteLine("Cliente não encontrado.");
 
             Conexao.Desconectar(conexao);
         }

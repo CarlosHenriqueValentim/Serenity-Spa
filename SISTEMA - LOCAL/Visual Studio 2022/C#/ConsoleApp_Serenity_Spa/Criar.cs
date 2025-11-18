@@ -9,28 +9,39 @@ namespace ConsoleApp_SerenitySpa
 {
     internal class Criar
     {
-        public static void InserirCliente()
+        public static void CadastrarCliente(int codigoEmpresa)
         {
             MySqlConnection conexao = Conexao.Conectar();
 
-            Console.WriteLine("Digite o nome do cliente:");
+            Console.WriteLine("Nome:");
             string nome = Console.ReadLine();
 
-            Console.WriteLine("Digite o email do cliente:");
-            string email = Console.ReadLine();
-
-            Console.WriteLine("Digite o telefone do cliente:");
+            Console.WriteLine("Telefone:");
             string telefone = Console.ReadLine();
 
-            string sql = "INSERT INTO clientes (nome, email, telefone) VALUES (@nome, @email, @telefone)";
+            Console.WriteLine("Email:");
+            string email = Console.ReadLine();
+
+            Console.WriteLine("Nascimento (yyyy-mm-dd):");
+            string nascimento = Console.ReadLine();
+
+            Console.WriteLine("Sexo (m/f):");
+            string sexo = Console.ReadLine();
+
+            string sql = @"INSERT INTO clientes 
+                        (codigo_empresa, nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
+                        VALUES (@empresa,@nome,@tel,@email,@nasc,@sexo)";
 
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@empresa", codigoEmpresa);
             cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@tel", telefone);
             cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@nasc", nascimento);
+            cmd.Parameters.AddWithValue("@sexo", sexo);
 
             cmd.ExecuteNonQuery();
-            Console.WriteLine("Cliente cadastrado com sucesso!\n");
+            Console.WriteLine("Cliente cadastrado com sucesso!");
 
             Conexao.Desconectar(conexao);
         }

@@ -7,34 +7,52 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_SerenitySpa
 {
-    public class Atualizar
+    internal class Atualizar
     {
         public static void AtualizarCliente()
         {
-            MySqlConnection conexao = Conexao.Conectar();
-
-            Console.WriteLine("Digite o ID do cliente que deseja atualizar:");
+            Console.Write("ID do cliente: ");
             int id = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o novo nome:");
-            string nome = Console.ReadLine();
-
-            Console.WriteLine("Digite o novo email:");
-            string email = Console.ReadLine();
-
-            Console.WriteLine("Digite o novo telefone:");
-            string telefone = Console.ReadLine();
-
-            string sql = "UPDATE clientes SET nome = @nome, email = @email, telefone = @telefone WHERE id_cliente = @id";
-
-            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+            MySqlConnection conexao = Conexao.Conectar();
+            string sqlSelect = "SELECT * FROM clientes WHERE codigo_cliente=@id";
+            MySqlCommand cmd = new MySqlCommand(sqlSelect, conexao);
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@nome", nome);
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@telefone", telefone);
 
-            cmd.ExecuteNonQuery();
-            Console.WriteLine("Cliente atualizado com sucesso!\n");
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Cliente c = new Cliente
+                {
+                    Codigo = id,
+                    Nome = reader["nome_cliente"].ToString(),
+                    Telefone = reader["telefone_cliente"].ToString(),
+                    Email = reader["email_cliente"].ToString(),
+                    Nascimento = reader["nascimento_cliente"].ToString(),
+                    Sexo = reader["sexo_cliente"].ToString()
+                };
+                reader.Close();
+                c.AlterarDados();
+
+                string sqlUpdate = @"UPDATE clientes 
+                                     SET nome_cliente=@nome, telefone_cliente=@tel, email_cliente=@email, 
+                                         nascimento_cliente=@nasc, sexo_cliente=@sexo
+                                     WHERE codigo_cliente=@id";
+                MySqlCommand cmdUpdate = new MySqlCommand(sqlUpdate, conexao);
+                cmdUpdate.Parameters.AddWithValue("@nome", c.Nome);
+                cmdUpdate.Parameters.AddWithValue("@tel", c.Telefone);
+                cmdUpdate.Parameters.AddWithValue("@email", c.Email);
+                cmdUpdate.Parameters.AddWithValue("@nasc", c.Nascimento);
+                cmdUpdate.Parameters.AddWithValue("@sexo", c.Sexo);
+                cmdUpdate.Parameters.AddWithValue("@id", id);
+
+                cmdUpdate.ExecuteNonQuery();
+                Console.WriteLine("Cliente atualizado com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Cliente não encontrado.");
+            }
 
             Conexao.Desconectar(conexao);
         }
