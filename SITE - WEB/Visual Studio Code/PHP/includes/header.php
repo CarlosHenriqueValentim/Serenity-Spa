@@ -1,8 +1,3 @@
-<?php
-// PHP/includes/header.php
-// Aqui iniciamos a sessão apenas neste arquivo (único lugar)
-if (session_status() == PHP_SESSION_NONE) session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
