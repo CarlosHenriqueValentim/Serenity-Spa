@@ -1,9 +1,8 @@
 <?php
-// PHP/database.php
 $host = "localhost";
 $port = "3306";
 $user = "root";
-$senha = "root"; // altere se necessário
+$senha = "root";
 $banco = "Serenity_Spa";
 
 try {
