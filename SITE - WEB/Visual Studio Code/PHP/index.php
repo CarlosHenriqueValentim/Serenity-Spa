@@ -26,4 +26,6 @@ if (!empty($_SESSION['usuario'])) {
     <p class="msg">Ainda não tem conta? <a href="form-cad.php">Cadastrar</a></p>
   </div>
 </section>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php 
+include __DIR__ . '/includes/footer.php'; 
+?>
