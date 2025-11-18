@@ -1,7 +1,6 @@
 <?php
 include __DIR__ . "/database.php";
 
-// Verificar se os campos existem
 if(!isset(
     $_POST['nome'],
     $_POST['email'],
@@ -23,19 +22,15 @@ $data   = $_POST['data_agendamento'];
 $hora   = $_POST['hora'];
 $obs    = $_POST['obs'];
 
-// Se o professor pediu ID de usuário obrigatório, você define aqui
-// Caso não tenha login para esse formulário, deixar ID fixo = 1
 $id_user = 1;
 
 try{
-    // Inserção no padrão do professor
     $stmt = $conn->prepare("
         INSERT INTO agenda
         (id_user, nome_ag, desc_ag, data_ini_ag, dia_ag, email, zap, hora, obs, servico)
         VALUES (:id_user, :nome, :desc, :data, 1, :email, :zap, :hora, :obs, :servico);
     ");
 
-    // Descrição junta serviço + observação
     $descricao = $serv . ' - ' . $obs;
 
     $stmt->bindParam(':id_user', $id_user);
