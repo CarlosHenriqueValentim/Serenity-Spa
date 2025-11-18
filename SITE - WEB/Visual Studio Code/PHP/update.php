@@ -22,7 +22,7 @@ try {
     $stmt->execute();
 
     header('Location: painel.php');
-    exit;
+    die();
 } catch (PDOException $e) {
     echo "ERRO:" . $e->getMessage();
 }
