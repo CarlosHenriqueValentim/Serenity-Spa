@@ -42,7 +42,7 @@ include __DIR__ . "/includes/header.php";
         <input type="time" name="hora" required><br>
 
         <label>Observações</label>
-        <textarea name="obs" rows="4" placeholder="Digite sua mensagem para entrar em contato com a gente"></textarea><br>
+        <textarea name="obs" rows="4" placeholder="Mensagem"></textarea><br>
 
         <input type="submit" value="Enviar Agendamento">
         <input type="reset" value="Limpar">
