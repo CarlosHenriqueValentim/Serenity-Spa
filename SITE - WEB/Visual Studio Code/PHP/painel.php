@@ -1,5 +1,5 @@
 <?php
-include __DIR__.'/includes/header.php';
+include __DIR__.'/includes/header-painel.php';
 include __DIR__.'/database.php';
 session_start();
 

@@ -16,20 +16,9 @@
     <img src="../IMAGENS/Serenity.jpeg" alt="Logo Serenity" class="A-img">
     SPA Serenity
   </div>
-
   <nav>
-    <?php if(!empty($_SESSION['usuario'])): ?>
-      <a href="painel.php">Painel</a>
-      <a href="form-agendar.php">Agendar</a>
-      <a href="logout.php">Sair (<?= htmlspecialchars($_SESSION['usuario']['nome']) ?>)</a>
-
-    <?php else: ?>
       <a href="index.php">Entrar</a>
-      <a href="form-cad.php">Cadastrar</a>
-      <a href="form-agendar.php">Agendar</a>
       <a href="../HTML/index.html">Voltar</a>
-      <button><a href="logout.php">Logout</a></button>
-    <?php endif; ?>
   </nav>
 </header>
 

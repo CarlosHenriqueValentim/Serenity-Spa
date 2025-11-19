@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/includes/header.php';
+include __DIR__ . '/includes/header-entrar.php';
 session_start();
 
 if (!empty($_SESSION['clientes'])) {
