@@ -10,7 +10,13 @@ if (!isset($_GET['id'])) {
 $id = $_GET['id'];
 
 try {
-    $stmt = $conn->prepare("SELECT * FROM agenda WHERE id_ag = :id LIMIT 1;");
+    $stmt = $conn->prepare("
+        SELECT a.*, s.nome_servico
+        FROM agendamentos a
+        INNER JOIN servicos s ON s.codigo_servico = a.codigo_servico
+        WHERE codigo_agendamento = :id
+        LIMIT 1
+    ");
     $stmt->bindParam(':id', $id);
     $stmt->execute();
     $dados = $stmt->fetch(PDO::FETCH_OBJ);
@@ -28,16 +34,25 @@ try {
 ?>
 
 <form action="update.php" method="post">
-  <label>Nome:</label>
-  <input type="text" name="nome" value="<?php echo htmlspecialchars($dados->nome_ag); ?>"><br>
-  <label>Descrição:</label>
-  <textarea name="desc"><?php echo htmlspecialchars($dados->desc_ag); ?></textarea><br>
-  <label>Data:</label>
-  <input type="date" name="data_ini" value="<?php echo htmlspecialchars($dados->data_ini_ag); ?>"><br>
-  <label>Dias:</label>
-  <input type="number" name="dia" value="<?php echo htmlspecialchars($dados->dia_ag); ?>"><br>
-  <input type="hidden" name="id" value="<?php echo htmlspecialchars($dados->id_ag); ?>">
-  <input type="submit" value="Alterar">
+    <label>Serviço:</label>
+    <input type="text" value="<?= htmlspecialchars($dados->nome_servico) ?>" disabled><br>
+
+    <label>Data:</label>
+    <input type="date" name="data" value="<?= htmlspecialchars($dados->data) ?>"><br>
+
+    <label>Duração:</label>
+    <input type="time" name="duracao_agendamento" value="<?= htmlspecialchars($dados->duracao_agendamento) ?>"><br>
+
+    <label>Status:</label>
+    <select name="status">
+        <option value="agendado"   <?= $dados->status == "agendado" ? "selected" : "" ?>>Agendado</option>
+        <option value="concluido"  <?= $dados->status == "concluido" ? "selected" : "" ?>>Concluído</option>
+        <option value="cancelado"  <?= $dados->status == "cancelado" ? "selected" : "" ?>>Cancelado</option>
+    </select><br>
+
+    <input type="hidden" name="id" value="<?= htmlspecialchars($dados->codigo_agendamento) ?>">
+
+    <input type="submit" value="Alterar">
 </form>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

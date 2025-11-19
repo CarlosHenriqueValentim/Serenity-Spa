@@ -15,7 +15,7 @@ include __DIR__ . "/includes/header.php";
         <input type="text" name="email" placeholder="Digite seu Email" maxlength="100" required><br>
 
         <label>WhatsApp</label>
-        <input type="tel" name="zap" placeholder="(11) 99999-9999" maxlength="15" required><br>
+        <input type="tel" name="telefone" placeholder="(11) 99999-9999" maxlength="15" required><br>
 
         <label>Serviço</label>
         <select name="servico" required>

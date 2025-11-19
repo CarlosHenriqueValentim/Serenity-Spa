@@ -359,6 +359,613 @@ nav a.hover-animate::after {
   width: 80%;
 }
 
+header > h1 {
+  font-family: 'power', serif;
+  font-size: 1.8rem;
+  color: #fff;
+  background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(153, 63, 95, 0.12);
+  margin-left: 8px;
+  letter-spacing: 1px;
+}
+
+main section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.92);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(154, 57, 93, 0.06);
+  margin: 18px 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+main section table thead th {
+  background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+  color: #ffffff;
+  font-family: 'power', serif;
+  font-weight: 600;
+  padding: 12px 14px;
+  text-align: left;
+  letter-spacing: 0.6px;
+  font-size: 0.95rem;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+
+main section table tbody td {
+  padding: 12px 14px;
+  color: #5a3d46;
+  border-bottom: 1px solid #ffe7ee;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+
+main section table tbody td[colspan] {
+  text-align: center;
+  font-family: 'gelo', serif;
+  color: #9b3f5f;
+  padding: 20px;
+}
+
+
+main section table tbody tr:hover td {
+  background: linear-gradient(180deg, rgba(248,180,196,0.18), rgba(224,122,154,0.06));
+}
+
+main section table a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+main section table a[href*="alterar"] {
+  background: linear-gradient(90deg, #ffc8d6, #ff9ec0);
+  color: #9b3f5f;
+  box-shadow: 0 6px 12px rgba(248,180,196,0.12);
+}
+
+main section table a[href*="excluir"],
+main section table a[href*="cancelar"],
+main section table a[href*="Cancelar"],
+main section table a[href*="cancel"] {
+  background: linear-gradient(90deg, #e07a9a, #c95a7e);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(201,90,126,0.12);
+}
+
+
+main section table a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+
+@media screen and (max-width: 600px) {
+  header > h1 {
+    font-size: 1.4rem;
+    padding: 8px 12px;
+  }
+
+  main section table thead th,
+  main section table tbody td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  main section table {
+    font-size: 0.95rem;
+  }
+}
+
+.painel-nome {
+    font-family: 'power', serif;
+    font-size: 2.2em;
+    color: #9b3f5f;
+    margin: 30px auto 10px auto;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.tabela-agenda {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffe6ef;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tabela-agenda th {
+    background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+    color: white;
+    padding: 12px;
+    font-family: 'fogo', sans-serif;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.tabela-agenda td {
+    padding: 10px;
+    font-family: 'gelo', serif;
+    text-align: center;
+    color: #5a3d46;
+    border: 1px solid #ffccd9;
+}
+
+.tabela-agenda tr:nth-child(even) {
+    background: #ffeef4;
+}
+
+.tabela-agenda a {
+    color: #e07a9a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.tabela-agenda a:hover {
+    color: #9b3f5f;
+}
+
+.painel-nome {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: #a33c6d;
+}
+
+.tabela-agenda {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #ffffffcc;
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.tabela-agenda th {
+    background: #d986a8;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.tabela-agenda td {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e8bccc;
+}
+
+.tabela-agenda tr:hover {
+    background: #ffe6f0;
+}
+
+.tabela-agenda a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.tabela-agenda a:hover {
+    opacity: 0.7;
+}
+
+.tabela-agenda a[href*="alterar"] {
+    background: #88b4ff;
+    color: white;
+}
+
+.tabela-agenda a[href*="excluir"] {
+    background: #ff6b6b;
+    color: white;
+}
+
+.tabela-agenda td[colspan] {
+    padding: 20px;
+    font-size: 17px;
+    color: #a33c6d;
+}
+
+.table-container {
+    width: 90%;
+    max-width: 950px;
+    margin: 60px auto 120px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.tabela-agenda {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 240, 245, 0.90);
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 26px rgba(153, 63, 95, 0.15);
+    font-family: 'gelo', serif;
+}
+
+.tabela-agenda thead th {
+    background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: 'power', serif;
+    font-size: 1.1rem;
+    border-bottom: 2px solid rgba(255,255,255,0.25);
+}
+
+.tabela-agenda tbody tr {
+    transition: background 0.25s ease;
+}
+
+.tabela-agenda tbody tr:nth-child(even) {
+    background: rgba(255, 230, 240, 0.65);
+}
+
+.tabela-agenda tbody tr:hover {
+    background: rgba(224, 122, 154, 0.12);
+}
+
+.tabela-agenda td {
+    padding: 12px 14px;
+    text-align: center;
+    color: #5a3d46;
+    border-bottom: 1px solid #ffd3e1;
+    font-size: 1rem;
+    font-family: 'gelo', serif;
+}
+
+.tabela-agenda td[colspan] {
+    padding: 24px;
+    font-size: 1.3rem;
+    color: #9b3f5f;
+    font-family: 'power', serif;
+}
+
+
+.tabela-agenda a {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.tabela-agenda a[href*="alterar"] {
+    background: linear-gradient(90deg, #b3d1ff, #88b4ff);
+    color: white;
+    box-shadow: 0 6px 14px rgba(136, 180, 255, 0.25);
+}
+
+.tabela-agenda a[href*="alterar"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.tabela-agenda a[href*="excluir"],
+.tabela-agenda a[href*="cancel"] {
+    background: linear-gradient(90deg, #e07a9a, #c95a7e);
+    color: white;
+    box-shadow: 0 6px 14px rgba(201, 90, 126, 0.25);
+}
+
+.tabela-agenda a[href*="excluir"]:hover,
+.tabela-agenda a[href*="cancel"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.painel-nome {
+    font-family: 'power', serif;
+    text-align: center;
+    font-size: 2.4em;
+    color: #9b3f5f;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.tabela-agenda {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+
+.tabela-agenda thead {
+    background: #4a148c;
+    color: white;
+}
+
+.tabela-agenda th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.tabela-agenda td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-agenda tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.tabela-agenda a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tabela-agenda a[href*="alterar"] {
+    background: #2196f3;
+    color: white;
+}
+
+.tabela-agenda a[href*="alterar"]:hover {
+    background: #0b7dda;
+}
+
+.tabela-agenda a[href*="excluir"],
+.tabela-agenda a[href*="cancelar"] {
+    background: #e53935;
+    color: white;
+}
+
+.tabela-agenda a[href*="excluir"]:hover,
+.tabela-agenda a[href*="cancelar"]:hover {
+    background: #c62828;
+}
+
+.tabela-agenda td[colspan] {
+    text-align: center;
+    color: #666;
+    padding: 25px;
+}
+
+@media (max-width: 700px) {
+    .tabela-agenda {
+        font-size: 14px;
+    }
+
+    .tabela-agenda th,
+    .tabela-agenda td {
+        padding: 10px;
+    }
+}
+
+.painel-nome {
+    font-family: 'power', serif;
+    text-align: center;
+    font-size: 2.4em;
+    color: #9b3f5f;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    animation: fadeDown 0.8s ease;
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tabela-agenda {
+    width: 90%;
+    max-width: 950px;
+    border-collapse: collapse;
+    background: rgba(255, 240, 245, 0.95);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0 auto 80px auto;
+    box-shadow: 0 8px 26px rgba(153, 63, 95, 0.15);
+    font-family: 'gelo', serif;
+    animation: fadeIn 0.8s ease;
+}
+
+.tabela-agenda thead th {
+    background: linear-gradient(90deg, #f8b4c4, #e07a9a);
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-family: 'power', serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+
+.tabela-agenda tbody tr {
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.tabela-agenda tbody tr:nth-child(even) {
+    background: rgba(255, 230, 240, 0.7);
+}
+
+.tabela-agenda tbody tr:hover {
+    background: rgba(224, 122, 154, 0.15);
+    transform: scale(1.01);
+}
+
+
+.tabela-agenda td {
+    padding: 12px 14px;
+    text-align: center;
+    color: #5a3d46;
+    font-size: 1rem;
+    border-bottom: 1px solid #ffd1df;
+}
+
+.tabela-agenda td[colspan] {
+    font-size: 1.3rem;
+    padding: 24px;
+    color: #9b3f5f;
+    font-family: 'power', serif;
+}
+
+
+.tabela-agenda a {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+
+.tabela-agenda a[href*="alterar"] {
+    background: linear-gradient(90deg, #b3d1ff, #88b4ff);
+    color: white;
+    box-shadow: 0 6px 14px rgba(136, 180, 255, 0.25);
+}
+
+.tabela-agenda a[href*="alterar"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+.tabela-agenda a[href*="excluir"],
+.tabela-agenda a[href*="cancel"] {
+    background: linear-gradient(90deg, #e07a9a, #c95a7e);
+    color: white;
+    box-shadow: 0 6px 14px rgba(201, 90, 126, 0.25);
+}
+
+.tabela-agenda a[href*="excluir"]:hover,
+.tabela-agenda a[href*="cancel"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+    .tabela-agenda {
+        width: 98%;
+        font-size: 0.9rem;
+    }
+
+    .tabela-agenda thead {
+        font-size: 0.9rem;
+    }
+
+    .painel-nome {
+        font-size: 1.8rem;
+    }
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.tabela-agenda {
+    width: 90%;
+    max-width: 950px;
+    margin: 0 auto 80px auto;
+}
+
+.tabela-agenda thead th { 
+  background: linear-gradient(90deg, #f8b4c4, #e07a9a); 
+  color: #fff; 
+  padding: 14px; 
+  text-align: center; 
+  font-family: 'power', serif; 
+  font-size: 1.1rem; 
+  letter-spacing: 1px; 
+}
+.tabela-agenda tbody tr { 
+  transition: background 0.25s ease, transform 0.25s ease; }
+.tabela-agenda tbody tr:nth-child(even) { background: rgba(255, 230, 240, 0.7); }
+.tabela-agenda tbody tr:hover { background: rgba(224, 122, 154, 0.15); transform: scale(1.01); }
+.tabela-agenda td { padding: 12px 14px; text-align: center; color: #5a3d46; font-size: 1rem; border-bottom: 1px solid #ffd1df; }
+.tabela-agenda td[colspan] { font-size: 1.3rem; padding: 24px; color: #9b3f5f; font-family: 'power', serif; }
+
+
+.tabela-agenda a { 
+  text-decoration: none; 
+  padding: 8px 14px; border-radius: 8px; 
+  font-weight: bold; font-size: 0.95rem; 
+  display: inline-block; 
+  transition: 0.2s ease; 
+}
+
+.tabela-agenda a[href*="alterar"] { 
+  background: linear-gradient(90deg, #b3d1ff, #88b4ff); 
+  color: white; box-shadow: 0 6px 14px rgba(136, 180, 255, 0.25); 
+}
+
+.tabela-agenda a[href*="alterar"]:hover { 
+  transform: translateY(-2px); 
+  opacity: 0.9; 
+}
+.tabela-agenda a[href*="excluir"], .tabela-agenda a[href*="cancelar"] { 
+  background: linear-gradient(90deg, #e07a9a, #c95a7e); 
+  color: white; box-shadow: 0 6px 14px rgba(201, 90, 126, 0.25); 
+}
+.tabela-agenda a[href*="excluir"]:hover, .tabela-agenda a[href*="cancelar"]:hover { 
+  transform: translateY(-2px); 
+  opacity: 0.9; 
+}
+
+
+@keyframes fadeIn { 0% { 
+  opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); 
+  } }
+@keyframes fadeDown { 0% { 
+  opacity: 0; transform: translateY(-15px); } 100% { opacity: 1; transform: translateY(0); 
+  } }
+
+@media (max-width: 700px) { .tabela-agenda { font-size: 14px; } .tabela-agenda th, .tabela-agenda td { padding: 10px; } }
+@media (max-width: 600px) { .tabela-agenda { width: 98%; font-size: 0.9rem; } .painel-nome { font-size: 1.8rem; } }
+
 footer {
   background: linear-gradient(90deg, #f8b4c4, #e07a9a);
   color: white;

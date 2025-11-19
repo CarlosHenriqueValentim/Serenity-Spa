@@ -163,32 +163,37 @@ values
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
-codigo_empresa int not null,
+codigo_empresa int not null default 1,
 nome_cliente varchar(200) not null,
-telefone_cliente varchar(20) not null,
+data_nasc_cliente date not null,
+telefone_cliente varchar(20),
 email_cliente varchar(200) not null,
-nascimento_cliente date not null,
-sexo_cliente char(1) not null check (sexo_cliente in ('m','f')),
+senha_cliente varchar(50) not null,
+sexo_cliente char(1) default 'm' check (sexo_cliente in ('m','f')),
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
 unique key uq_clientes_email (email_cliente)
 );
 
-insert into clientes(codigo_empresa, nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
+insert into clientes (codigo_empresa, nome_cliente, data_nasc_cliente, telefone_cliente, email_cliente, senha_cliente, sexo_cliente)
 values
-(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com
-','1998-08-03','f');
+(1, 'Mirela Silva Aparecida', '2008-11-02', '11962268712', 'nascil.rela@gmail.com', '1234', 'f');
+
 
 create table if not exists agendamentos (
 codigo_agendamento int auto_increment not null primary key,
 codigo_empresa int not null,
-codigo_cliente int not null,
+codigo_clientes int not null,
 codigo_funcionario int not null,
 codigo_servico int not null,
 data date not null,
 duracao_agendamento time,
 status enum('agendado','concluido','cancelado') not null,
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
-foreign key (codigo_cliente) references clientes(codigo_cliente) on delete restrict on update cascade,
+foreign key (codigo_clientes) references clientes(codigo_cliente) on delete restrict on update cascade,
 foreign key (codigo_funcionario) references funcionarios(codigo_funcionario) on delete restrict on update cascade,
 foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );
+
+show tables;
+select * from clientes;
+SELECT codigo_empresa, email_cliente, senha_cliente FROM clientes WHERE email_cliente = login AND senha_cliente = senha LIMIT 1;
