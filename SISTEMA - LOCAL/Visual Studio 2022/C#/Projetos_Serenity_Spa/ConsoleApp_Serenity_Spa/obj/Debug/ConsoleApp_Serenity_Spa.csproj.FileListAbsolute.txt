@@ -1,0 +1,7 @@
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_Serenity_Spa.exe.config
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_Serenity_Spa.exe
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\bin\Debug\ConsoleApp_Serenity_Spa.pdb
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.AssemblyReference.cache
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.csproj.CoreCompileInputs.cache
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.exe
+C:\Users\Adriana\Downloads\Serenity\Serenity-Spa\SISTEMA - LOCAL\Visual Studio 2022\C#\Projetos_Serenity_Spa\ConsoleApp_Serenity_Spa\obj\Debug\ConsoleApp_Serenity_Spa.pdb
