@@ -148,47 +148,64 @@ nome_funcionario varchar(100) not null,
 cargo_funcionario varchar(50) not null,
 telefone_funcionario varchar(15) not null,
 email_funcionario varchar(100) not null,
+senha_funcionario VARCHAR(100) NOT NULL,
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
 unique key uq_funcionarios_email (email_funcionario)
 );
 
-insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario)
+insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario, senha_funcionario)
 values
-(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com
-'),
-(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com
-'),
-(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com
-');
+(1, 'eduarda da rocha', 'massagista', '1193247875', 'eduarda.rocha@gmail.com', 'serenity_senha'),
+(1, 'heloisa marques pereira', 'gerente', '11957888841', 'marques.heloisa@gmail.com', 'serenity_senha'),
+(1, 'mariana yukimi ishigaki', 'sócia e recepcionista', '11923479675', 'mariana.yukimi@gmail.com', 'serenity_senha');
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
-codigo_empresa int not null,
+codigo_empresa int not null default 1,
 nome_cliente varchar(200) not null,
-telefone_cliente varchar(20) not null,
+data_nasc_cliente date not null,
+telefone_cliente varchar(20),
 email_cliente varchar(200) not null,
-nascimento_cliente date not null,
-sexo_cliente char(1) not null check (sexo_cliente in ('m','f')),
+senha_cliente varchar(50) not null,
+sexo_cliente char(1) default 'm' check (sexo_cliente in ('m','f')),
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
 unique key uq_clientes_email (email_cliente)
 );
 
-insert into clientes(codigo_empresa, nome_cliente, telefone_cliente, email_cliente, nascimento_cliente, sexo_cliente)
+insert into clientes (codigo_empresa, nome_cliente, data_nasc_cliente, telefone_cliente, email_cliente, senha_cliente, sexo_cliente)
 values
-(1, 'Mirela Silva Aparecida','11962268712','nascil.rela@gmail.com
-','1998-08-03','f');
+(1, 'Mirela Silva Aparecida', '2008-11-02', '11962268712', 'nascil.rela@gmail.com', '1234', 'f');
+
 
 create table if not exists agendamentos (
 codigo_agendamento int auto_increment not null primary key,
 codigo_empresa int not null,
-codigo_cliente int not null,
+codigo_clientes int not null,
 codigo_funcionario int not null,
 codigo_servico int not null,
 data date not null,
 duracao_agendamento time,
 status enum('agendado','concluido','cancelado') not null,
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
-foreign key (codigo_cliente) references clientes(codigo_cliente) on delete restrict on update cascade,
+foreign key (codigo_clientes) references clientes(codigo_cliente) on delete restrict on update cascade,
 foreign key (codigo_funcionario) references funcionarios(codigo_funcionario) on delete restrict on update cascade,
 foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );
+
+#TESTES
+DELETE FROM funcionarios 
+WHERE codigo_funcionario IN (1,2,3);
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+DELETE FROM funcionarios WHERE email_funcionario LIKE '%\n%';
+DELETE FROM funcionarios WHERE email_funcionario LIKE '%\n%';
+UPDATE funcionarios SET email_funcionario = 'eduarda.rocha@gmail.com' WHERE codigo_funcionario = 1;
+UPDATE funcionarios SET email_funcionario = 'marques.heloisa@gmail.com' WHERE codigo_funcionario = 2;
+UPDATE funcionarios SET email_funcionario = 'mariana.yukimi@gmail.com' WHERE codigo_funcionario = 3;
+DESCRIBE agendamentos;
+ALTER TABLE clientes 
+MODIFY senha_cliente VARCHAR(100);
+TRUNCATE TABLE clientes;
+show tables;
+select * from clientes;
+SELECT codigo_empresa, email_cliente, senha_cliente FROM clientes WHERE email_cliente = login AND senha_cliente = senha LIMIT 1;

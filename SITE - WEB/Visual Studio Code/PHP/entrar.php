@@ -1,51 +1,50 @@
 <?php
-session_start();
 include __DIR__ . '/database.php';
+session_start(); 
 
 if (!isset($_POST['email'], $_POST['senha'])) {
-    header('Location: index.php');
+    header("location: index.php?erro=preencha todos os campos");
     exit;
 }
 
-$email = trim($_POST['email']);
+$email = strtolower(trim($_POST['email']));
 $senha = trim($_POST['senha']);
 
 try {
-    $sql = "SELECT codigo_cliente, nome_cliente, email_cliente 
-            FROM clientes 
-            WHERE email_cliente = :email AND senha_cliente = :senha 
-            LIMIT 1";
+    $stmt = $conn->prepare("select * from clientes where lower(trim(email_cliente)) = :email limit 1");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $consulta = $conn->prepare($sql);
-    $consulta->bindParam(':email', $email);
-    $consulta->bindParam(':senha', $senha);
-    $consulta->execute();
-
-    if ($consulta->rowCount() != 1) {
-        header('Location: index.php?erro=' . urlencode('Email ou senha inválidos'));
+    if ($usuario && trim($usuario['senha_cliente']) === $senha) {
+        $_SESSION['usuario'] = [
+            'id' => $usuario['codigo_cliente'],
+            'nome' => $usuario['nome_cliente'],
+            'tipo' => 'cliente'
+        ];
+        header("location: painel.php");
         exit;
     }
 
-    $data = $consulta->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("select * from funcionarios where lower(trim(email_funcionario)) = :email limit 1");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $_SESSION['clientes'] = [
-        'codigo' => $data['codigo_cliente'],
-        'codigo_cliente' => $data['codigo_cliente'],
-        'nome'   => $data['nome_cliente'],
-        'nome_cliente' => $data['nome_cliente'],
-        'email'  => $data['email_cliente']
-    ];
+    if ($usuario && trim($usuario['senha_funcionario']) === $senha) {
+        $_SESSION['usuario'] = [
+            'id' => $usuario['codigo_funcionario'],
+            'nome' => $usuario['nome_funcionario'],
+            'tipo' => 'funcionario',
+            'cargo' => $usuario['cargo_funcionario']
+        ];
+        header("location: painel-admin.php");
+        exit;
+    }
 
-    $_SESSION['usuario'] = [
-        'id' => $data['codigo_cliente'],
-        'nome' => $data['nome_cliente'],
-        'email' => $data['email_cliente']
-    ];
-
-    header('Location: painel.php');
+    header("location: index.php?erro=email ou senha incorretos");
     exit;
 
 } catch (PDOException $e) {
-    echo "Erro no login: " . htmlspecialchars($e->getMessage());
-    exit;
+    echo "erro: " . $e->getMessage();
 }

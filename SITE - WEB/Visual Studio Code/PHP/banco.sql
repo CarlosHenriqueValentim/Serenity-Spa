@@ -148,18 +148,16 @@ nome_funcionario varchar(100) not null,
 cargo_funcionario varchar(50) not null,
 telefone_funcionario varchar(15) not null,
 email_funcionario varchar(100) not null,
+senha_funcionario VARCHAR(100) NOT NULL,
 foreign key (codigo_empresa) references empresa(codigo_empresa) on delete cascade on update cascade,
 unique key uq_funcionarios_email (email_funcionario)
 );
 
-insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario)
+insert into funcionarios(codigo_empresa, nome_funcionario, cargo_funcionario, telefone_funcionario, email_funcionario, senha_funcionario)
 values
-(1, 'Eduarda da Rocha','Massagista','1193247875','eduarda.rocha@gmail.com
-'),
-(1, 'Heloisa Marques Pereira','Gerente','11957888841','marques.heloisa@gmail.com
-'),
-(1, 'Mariana Yukimi Ishigaki','Sócia e Recepcionista','11923479675','mariana.yukimi@gmail.com
-');
+(1, 'eduarda da rocha', 'massagista', '1193247875', 'eduarda.rocha@gmail.com', 'serenity_senha'),
+(1, 'heloisa marques pereira', 'gerente', '11957888841', 'marques.heloisa@gmail.com', 'serenity_senha'),
+(1, 'mariana yukimi ishigaki', 'sócia e recepcionista', '11923479675', 'mariana.yukimi@gmail.com', 'serenity_senha');
 
 create table if not exists clientes (
 codigo_cliente int auto_increment not null primary key,
@@ -194,6 +192,20 @@ foreign key (codigo_funcionario) references funcionarios(codigo_funcionario) on 
 foreign key (codigo_servico) references servicos(codigo_servico) on delete restrict on update cascade
 );
 
+#TESTES
+DELETE FROM funcionarios 
+WHERE codigo_funcionario IN (1,2,3);
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+DELETE FROM funcionarios WHERE email_funcionario LIKE '%\n%';
+DELETE FROM funcionarios WHERE email_funcionario LIKE '%\n%';
+UPDATE funcionarios SET email_funcionario = 'eduarda.rocha@gmail.com' WHERE codigo_funcionario = 1;
+UPDATE funcionarios SET email_funcionario = 'marques.heloisa@gmail.com' WHERE codigo_funcionario = 2;
+UPDATE funcionarios SET email_funcionario = 'mariana.yukimi@gmail.com' WHERE codigo_funcionario = 3;
+DESCRIBE agendamentos;
+ALTER TABLE clientes 
+MODIFY senha_cliente VARCHAR(100);
+TRUNCATE TABLE clientes;
 show tables;
 select * from clientes;
 SELECT codigo_empresa, email_cliente, senha_cliente FROM clientes WHERE email_cliente = login AND senha_cliente = senha LIMIT 1;

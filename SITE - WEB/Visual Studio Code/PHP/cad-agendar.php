@@ -18,41 +18,31 @@ $obs      = isset($_POST['obs']) ? trim($_POST['obs']) : '';
 $codigo_empresa = 1;
 $codigo_funcionario = 1;
 
-$codigo_cliente = 1;
-if (!empty($_SESSION['clientes']['codigo'])) {
-    $codigo_cliente = (int)$_SESSION['clientes']['codigo'];
-} elseif (!empty($_SESSION['clientes']['codigo_cliente'])) {
+if (!empty($_SESSION['clientes']['codigo_cliente'])) {
     $codigo_cliente = (int)$_SESSION['clientes']['codigo_cliente'];
-} elseif (!empty($_SESSION['cliente']['id'])) {
-    $codigo_cliente = (int)$_SESSION['cliente']['id'];
 } elseif (!empty($_SESSION['usuario']['id'])) {
     $codigo_cliente = (int)$_SESSION['usuario']['id'];
+} else {
+    $codigo_cliente = 1; 
 }
 
 try {
-    $q = $conn->prepare("SELECT codigo_servico, duracao_min_servico FROM servicos WHERE nome_servico = :nome LIMIT 1");
-    $q->bindValue(':nome', $serv);
-    $q->execute();
-    $svc = $q->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("SELECT codigo_servico, duracao_min_servico FROM servicos WHERE nome_servico = :nome LIMIT 1");
+    $stmt->bindValue(':nome', $serv);
+    $stmt->execute();
+    $svc = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($svc) {
         $codigo_servico = (int)$svc['codigo_servico'];
         $dur_min = (int)$svc['duracao_min_servico'];
     } else {
-        $svc2 = $conn->query("SELECT codigo_servico, duracao_min_servico FROM servicos LIMIT 1")->fetch(PDO::FETCH_ASSOC);
-        if ($svc2) {
-            $codigo_servico = (int)$svc2['codigo_servico'];
-            $dur_min = (int)$svc2['duracao_min_servico'];
-        } else {
-            $codigo_servico = 1;
-            $dur_min = 30;
-        }
+        $codigo_servico = 1;
+        $dur_min = 30;
     }
 } catch (PDOException $e) {
     echo "Erro ao buscar serviço: " . htmlspecialchars($e->getMessage());
     exit;
 }
-
 function minutesToTime($min) {
     $h = floor($min / 60);
     $m = $min % 60;
@@ -63,12 +53,10 @@ $duracao_time = minutesToTime($dur_min);
 $status = 'agendado';
 
 try {
-    $stmt = $conn->prepare("
-        INSERT INTO agendamentos
+    $stmt = $conn->prepare("INSERT INTO agendamentos
         (codigo_empresa, codigo_clientes, codigo_funcionario, codigo_servico, data, duracao_agendamento, status)
         VALUES
-        (:codigo_empresa, :codigo_clientes, :codigo_funcionario, :codigo_servico, :data, :duracao_agendamento, :status)
-    ");
+        (:codigo_empresa, :codigo_clientes, :codigo_funcionario, :codigo_servico, :data, :duracao_agendamento, :status)");
 
     $stmt->bindValue(':codigo_empresa', $codigo_empresa, PDO::PARAM_INT);
     $stmt->bindValue(':codigo_clientes', $codigo_cliente, PDO::PARAM_INT);
@@ -87,3 +75,4 @@ try {
     echo "ERRO: " . htmlspecialchars($e->getMessage());
     exit;
 }
+?>
