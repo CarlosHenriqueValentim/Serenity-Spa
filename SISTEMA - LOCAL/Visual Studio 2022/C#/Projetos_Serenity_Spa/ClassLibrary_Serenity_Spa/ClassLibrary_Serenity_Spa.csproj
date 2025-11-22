@@ -45,9 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agendamento.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Financeiro.cs" />
+    <Compile Include="Funcionario.cs" />
+    <Compile Include="ItensPacote.cs" />
+    <Compile Include="Pacote.cs" />
     <Compile Include="Produtos_Estoque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serviços.cs" />
