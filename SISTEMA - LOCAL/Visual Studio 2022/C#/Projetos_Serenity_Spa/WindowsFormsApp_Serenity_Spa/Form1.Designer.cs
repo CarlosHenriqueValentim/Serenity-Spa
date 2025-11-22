@@ -52,13 +52,13 @@
             // agendarToolStripMenuItem
             // 
             this.agendarToolStripMenuItem.Name = "agendarToolStripMenuItem";
-            this.agendarToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.agendarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.agendarToolStripMenuItem.Text = "Agendar";
             // 
             // entrarToolStripMenuItem
             // 
             this.entrarToolStripMenuItem.Name = "entrarToolStripMenuItem";
-            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.entrarToolStripMenuItem.Text = "Entrar";
             // 
             // label4
@@ -85,7 +85,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

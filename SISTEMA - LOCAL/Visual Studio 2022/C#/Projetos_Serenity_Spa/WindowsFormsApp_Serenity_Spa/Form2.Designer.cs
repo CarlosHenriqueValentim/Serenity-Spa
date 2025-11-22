@@ -33,18 +33,18 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtZap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.horario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.ListSeriviço = new System.Windows.Forms.ComboBox();
+            this.data = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,13 +92,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(414, 138);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtNome.Location = new System.Drawing.Point(414, 138);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(200, 21);
+            this.txtNome.TabIndex = 2;
             // 
             // label2
             // 
@@ -111,15 +111,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "WhatsApp";
             // 
-            // textBox2
+            // txtZap
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(414, 189);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 21);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "Exemplo: (11)99999-9999";
+            this.txtZap.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtZap.Location = new System.Drawing.Point(414, 189);
+            this.txtZap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtZap.Name = "txtZap";
+            this.txtZap.Size = new System.Drawing.Size(200, 21);
+            this.txtZap.TabIndex = 4;
+            this.txtZap.Text = "Exemplo: (11)99999-9999";
             // 
             // label3
             // 
@@ -170,15 +170,15 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Horário";
             // 
-            // textBox5
+            // horario
             // 
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox5.Location = new System.Drawing.Point(414, 350);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 21);
-            this.textBox5.TabIndex = 11;
-            this.textBox5.Text = "-- : --";
+            this.horario.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.horario.Location = new System.Drawing.Point(414, 350);
+            this.horario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.horario.Name = "horario";
+            this.horario.Size = new System.Drawing.Size(200, 21);
+            this.horario.TabIndex = 11;
+            this.horario.Text = "-- : --";
             // 
             // label7
             // 
@@ -192,34 +192,34 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Observações";
             // 
-            // textBox6
+            // txtObs
             // 
-            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox6.Location = new System.Drawing.Point(414, 404);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 21);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Text = "Digite sua mensagem para entrar em contato";
+            this.txtObs.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtObs.Location = new System.Drawing.Point(414, 404);
+            this.txtObs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(200, 21);
+            this.txtObs.TabIndex = 13;
+            this.txtObs.Text = "Digite sua mensagem para entrar em contato";
             // 
-            // comboBox1
+            // ListSeriviço
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(417, 242);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 21);
-            this.comboBox1.TabIndex = 14;
+            this.ListSeriviço.FormattingEnabled = true;
+            this.ListSeriviço.Location = new System.Drawing.Point(417, 242);
+            this.ListSeriviço.Name = "ListSeriviço";
+            this.ListSeriviço.Size = new System.Drawing.Size(197, 21);
+            this.ListSeriviço.TabIndex = 14;
             // 
-            // dateTimePicker1
+            // data
             // 
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDark;
-            this.dateTimePicker1.Location = new System.Drawing.Point(414, 297);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker1.TabIndex = 15;
-            this.dateTimePicker1.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            this.data.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDark;
+            this.data.Location = new System.Drawing.Point(414, 297);
+            this.data.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
+            this.data.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(200, 21);
+            this.data.TabIndex = 15;
+            this.data.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             // 
             // Form2
             // 
@@ -227,25 +227,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp_Serenity_Spa.Properties.Resources.WhatsApp_Image_2025_11_16_at_23_54_43__2_;
             this.ClientSize = new System.Drawing.Size(1043, 450);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.data);
+            this.Controls.Add(this.ListSeriviço);
+            this.Controls.Add(this.txtObs);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.horario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtZap);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Agendar";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -260,17 +260,17 @@
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entrarToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtZap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox horario;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.ComboBox ListSeriviço;
+        private System.Windows.Forms.DateTimePicker data;
     }
 }
