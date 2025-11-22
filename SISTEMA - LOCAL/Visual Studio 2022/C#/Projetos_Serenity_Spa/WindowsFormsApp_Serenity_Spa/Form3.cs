@@ -21,5 +21,10 @@ namespace WindowsFormsApp_Serenity_Spa
         {
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

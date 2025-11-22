@@ -220,6 +220,7 @@
             this.data.Size = new System.Drawing.Size(200, 21);
             this.data.TabIndex = 15;
             this.data.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            this.data.ValueChanged += new System.EventHandler(this.data_ValueChanged);
             // 
             // Form2
             // 
@@ -246,6 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form2";
             this.Text = "Agendar";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

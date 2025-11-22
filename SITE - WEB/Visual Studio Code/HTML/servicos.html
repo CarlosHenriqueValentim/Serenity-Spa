@@ -6,12 +6,27 @@
   <link rel="icon" href="../imagens/logo_guia.png" type="image/png">
   <title>SPA Serenity - Serviços</title>
   <link rel="stylesheet" href="../css/style.css">
-  <script src="../JAVA SCRIPT/script.js"></script>
+  <script>
+    function pesquisarServicos() {
+      const input = document.getElementById('pesquisaServico');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('G');
+
+      Array.from(cards).forEach(card => {
+        const nome = card.getElementsByTagName('h2')[0].textContent.toLowerCase();
+        if (nome.indexOf(filter) > -1 || filter === '') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </head>
 <body class="CorpoServiços">
   <header>
     <div class="A"> 
-        <img src="../IMAGENS/Serenity.jpeg" alt="Logo Serenity" class="A-img">
+      <img src="../IMAGENS/Serenity.jpeg" alt="Logo Serenity" class="A-img">
       SPA Serenity
     </div>
     <nav>
@@ -28,34 +43,115 @@
   <section class="E"> 
     <h1>Nossos Serviços</h1>
     <p>Escolha o melhor para seu bem-estar. Temos massagens, tratamentos corporais, faciais e pacotes personalizados.</p>
+    <input type="text" id="pesquisaServico" placeholder="Pesquisar serviços..." onkeyup="pesquisarServicos()" style="margin-top:40px; padding:10px; width:90%; max-width:400px; border-radius:12px; border:1px solid #ff7797;">
   </section>
 
   <section class="F"> 
-    <div class="G"> 
-      <h2>Aromaterapia</h2>
-      <p>Óleos essenciais que relaxam corpo e mente.</p>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/aromaterapia.jpg" alt="Aromaterapia" class="card-servicos">
+    <h2>Aromaterapia</h2>
+    <p>Massagem com óleos essenciais para relaxamento e equilíbrio</p>
+    <p class="valor-servico">De R$ 180,00 a R$ 260,00</p>
     </div>
-    <div class="G"> 
-      <h2>Pedras Quentes</h2>
-      <p>Termoterapia que alivia tensões musculares.</p>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/pedrasquentes.jpg" alt="Pedras Quentes" class="card-servicos">
+    <h2>Pedras Quentes</h2>
+    <p>Massagem com pedras vulcânicas aquecidas para relaxamento muscular</p>
+    <p class="valor-servico">R$ 255,00</p>
     </div>
-    <div class="G"> 
-      <h2>Shiatsu</h2>
-      <p>Técnica japonesa de pressão em pontos energéticos.</p>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/shiatsu.png" alt="Shiatsu" class="card-Serviços">
+    <h2>Shiatsu</h2>
+    <p>Técnica oriental com pressão dos dedos em pontos específicos</p>
+    <p class="valor-servico">R$ 260,00</p>
     </div>
-    <div class="G"> 
-      <h2>Ventosa</h2>
-      <p>Cupping para circulação e recuperação muscular.</p>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/ventosa.jpg" alt="Com Ventosa" class="card-Serviços">
+    <h2>Com Ventosa</h2>
+    <p>Massagem que utiliza ventosas para ativar a circulação</p>
+    <p class="valor-servico">R$ 125,00</p>
     </div>
-    <div class="G"> 
-      <h2>Massagem Facial</h2>
-      <p>Drenagem e relaxamento da musculatura facial.</p>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/sueca.jpg" alt="Sueca" class="card-Serviços">
+    <h2>Sueca</h2>
+    <p>Massagem clássica com manobras relaxantes e terapêuticas</p>
+    <p class="valor-servico">R$ 210,00</p>
     </div>
-    <div class="G"> 
-      <h2>Pacotes Especiais</h2>
-      <p>Combinações de massagens e tratamentos com preço especial.</p>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/desportiva.jpg" alt="Desportiva" class="card-Serviços">
+    <h2>Desportiva</h2>
+    <p>Massagem voltada para alívio de tensões musculares em atletas</p>
+    <p class="valor-servico">De R$ 127,50 a R$ 280,00</p>
     </div>
-  </section>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/esfoliacao.jpg" alt="Esfoliação Completa" class="card-Serviços">
+    <h2>Esfoliação Completa</h2>
+    <p>Remoção de células mortas com cremes esfoliantes</p>
+    <p class="valor-servico">De R$ 120,00 a R$ 250,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/envoltorio.jpg" alt="Envoltório de Argilas, Chocolates ou Algas" class="card-Serviços">
+    <h2>Envoltório de Argilas, Chocolates ou Algas</h2>
+    <p>Tratamento nutritivo com aplicação corporal de elementos naturais</p>
+    <p class="valor-servico">R$ 690,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/limpezapele.jpg" alt="Limpeza de Pele Completa" class="card-Serviços">
+    <h2>Limpeza de Pele Completa</h2>
+    <p>Limpeza profunda com extração de impurezas e hidratação facial</p>
+    <p class="valor-servico">R$ 133,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/hidratacao.jpg" alt="Hidratação Profunda e Máscaras Faciais Nutritivas" class="card-Serviços">
+    <h2>Hidratação Profunda e Máscaras Faciais Nutritivas</h2>
+    <p>Tratamento facial com aplicação de máscaras e hidratação intensa</p>
+    <p class="valor-servico">R$ 140,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/massagemfacial.jpg" alt="Massagem Facial" class="card-Serviços">
+    <h2>Massagem Facial</h2>
+    <p>Massagem relaxante e estimulante para a face</p>
+    <p class="valor-servico">R$ 130,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/sauna.jpg" alt="Sauna Seca ou a Vapor" class="card-Serviços">
+    <h2>Sauna Seca ou a Vapor</h2>
+    <p>Acesso à sauna seca ou úmida para relaxamento</p>
+    <p class="valor-servico">De R$ 50,00 a R$ 80,00</p>
+    </div>
+  </div>
+  <div class="G">
+    <div class="imagens-servicos">
+    <img src="../IMAGENS/saisbanho.jpg" alt="Banho com Sais de Banho" class="card-Serviços">
+    <h2>Banho com Sais de Banho</h2>
+    <p>Imersão relaxante com sais especiais</p>
+    <p class="valor-servico">De R$ 100,00 a R$ 150,00</p>
+    </div>
+  </div>
+</section>
 
   <footer>
     Todos os Direitos Reservados <strong>© Serenity Spa</strong>

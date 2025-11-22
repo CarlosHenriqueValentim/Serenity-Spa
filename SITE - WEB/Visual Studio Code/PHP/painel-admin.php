@@ -12,6 +12,31 @@ $cargo = $_SESSION['usuario']['cargo'];
 
 include __DIR__ . '/includes/header.php';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mensagem'], $_POST['agendamento_id'])) {
+
+    $msg = trim($_POST['mensagem']);
+    $agendamentoId = $_POST['agendamento_id'];
+    $idFuncionario = $_SESSION['usuario']['id'] ?? $_SESSION['usuario']['codigo_funcionario'];
+
+    if (!empty($msg)) {
+        $stmt = $conn->prepare("
+            INSERT INTO mensagens 
+            (codigo_agendamento, remetente_tipo, remetente_id, mensagem)
+            VALUES (:ag, 'funcionario', :id, :msg)
+        ");
+
+        $stmt->execute([
+            ':ag' => $agendamentoId,
+            ':id' => $idFuncionario,
+            ':msg' => $msg
+        ]);
+    }
+
+    header("Location: painel-admin.php");
+    exit;
+}
+
+
 try {
     $totalAgendas     = $conn->query("SELECT COUNT(*) FROM agendamentos")->fetchColumn();
     $totalClientes    = $conn->query("SELECT COUNT(*) FROM clientes")->fetchColumn();
@@ -270,5 +295,6 @@ try {
         </div>
     </section>
 </div>
+
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

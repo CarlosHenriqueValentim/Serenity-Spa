@@ -21,5 +21,15 @@ namespace WindowsFormsApp_Serenity_Spa
         {
 
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

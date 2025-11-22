@@ -13,11 +13,16 @@ namespace WindowsFormsApp_Serenity_Spa
 {
     public partial class Form1 : Form
     {
-       private string conexaostring = "server=127.0.0.1;uid=root;pwd=root;database=ss";
+       private string conexaostring = "server=localhost;uid=root;pwd=root;database=Serenity_Spa";
         public Form1()
         {
             
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,9 +17,8 @@ namespace ConsoleApp_Serenity_Spa
 
                 try
                 {
-                    conexao = new MySqlConnection("server=127.0.0.1;uid=root;pwd=root;database=ss");
+                    conexao = new MySqlConnection("server=localhost;uid=root;pwd=root;database=Serenity_Spa");
                     conexao.Open();
-                    Console.WriteLine("Conexão estabelecida com sucesso!");
 
                     string sql = "select * from clientes";
                     cmd = new MySqlCommand(sql, conexao);
@@ -31,14 +30,13 @@ namespace ConsoleApp_Serenity_Spa
                         Console.WriteLine("Nome: " + rdr["nome_cliente"].ToString());
                         Console.WriteLine("Telefone: " + rdr["telefone_cliente"].ToString());
                         Console.WriteLine("E-mail: " + rdr["email_cliente"].ToString());
-                        Console.WriteLine("Nascimento: " + Convert.ToDateTime(rdr["nascimento_cliente"]).ToString("dd/MM/yyyy"));
+                        Console.WriteLine("Nascimento: " + Convert.ToDateTime(rdr["data_nasc_cliente"]).ToString("dd/MM/yyyy"));
                         Console.WriteLine("Sexo: " + rdr["sexo_cliente"].ToString());
                         Console.WriteLine("----------------------------------");
                     }
 
                     rdr.Close();
                     conexao.Close();
-                    Console.WriteLine("Conexão encerrada com sucesso.");
                 }
 
                 catch (Exception ex)
