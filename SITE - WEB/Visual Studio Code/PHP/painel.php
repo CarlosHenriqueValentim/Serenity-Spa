@@ -35,6 +35,20 @@ try {
 ?>
 
 <style>
+    @font-face {
+    font-family: power;
+    src: url(../FONTES/NewYork\ PERSONAL\ USE.otf);
+}
+
+@font-face {
+    font-family: gelo;
+    src: url(../FONTES/apple_garamond_Fontes_para_Texto_simples/AppleGaramond-Light.ttf);
+}
+
+@font-face {
+    font-family: fogo;
+    src: url(../FONTES/arial_narrow_7.ttf);
+}
 .painel-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -48,12 +62,19 @@ try {
 }
 
 .painel-header h1 {
+    font-family: 'power', serif;
+    font-weight: normal;
     font-size: 28px;
     margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #9b3f5f;
 }
 
 .painel-header p {
-    color: #555;
+    font-family: 'power', serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #9b3f5f;
 }
 
 .tabela-agenda {
@@ -132,7 +153,7 @@ try {
 <div class="painel-container">
 
     <div class="painel-header">
-        <h1>Bem-vindo(a), <strong><?= htmlspecialchars($nomeCliente) ?></strong></h1>
+        <h1>Bem-vindo(a), <?= htmlspecialchars($nomeCliente) ?></h1>
         <p>Seus agendamentos realizados no Serenity Spa</p>
     </div>
 
